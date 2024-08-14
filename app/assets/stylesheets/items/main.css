@@ -1,0 +1,66 @@
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 1.2em;
+  color: #2c3e50;
+  background-color: #f7f7f7;
+  margin: 20px;
+}
+
+h1 {
+  color: #34495e;
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 1.1em;
+  color: #7f8c8d;
+}
+
+ul {
+  list-style-type: none; /* デフォルトのリストスタイルを削除 */
+  padding: 0;
+}
+
+li {
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #ecf0f1; /* 背景色を薄いグレーに */
+  font-weight: bold; /* 太字で強調 */
+}
+
+a {
+  color: #2c3e50;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #2980b9;
+}
+
+.language {
+  display: block;
+  font-size: 0.9em;
+  color: #7f8c8d;
+  margin-top: 5px;
+  font-weight: normal;
+}
+
+
+
+/* フッター */
+footer {
+  background-color: #2c3e50;
+  color: #ecf0f1;
+  text-align: center;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.9em;
+}
