@@ -1,7 +1,10 @@
 
-<h1><%= current_user.nickname %>さん、ようこそNinjavaScriptへ！</h1>
-<p>今日も日本語学習を頑張りましょう！</p>
-<p><%= current_user.nickname %>さんのメンターは<%# <%= current_user.mentor.nickname %>さんです</p>
+<div class="top-spacing text-center">
+  <h1><%= current_user.nickname %>さん、ようこそNinjavaScriptへ！</h1>
+  <p>今日も日本語学習を頑張りましょう！</p>
+  <p><%= current_user.nickname %>さんのメンターは<%# <%= current_user.mentor.nickname %>さんです</p>
+</div>
+
 
 <ul>
   <li>
@@ -9,7 +12,7 @@
     <span class="language">たんごとうろく</span>
   </li>
   <li>
-    <%= link_to "#{current_user.nickname}さんの単語帳 -Your Wordbook-", '#' %>
+    <%= link_to "#{current_user.nickname}さんの単語帳 -Your Wordbook-", user_words_path(current_user) %>
     <span class="language"><%= "#{current_user.nickname}さんのたんごちょう" %></span>
   </li>
   <li>
@@ -33,11 +36,6 @@
 
 
 
-
-<%# フッター %>
-  <footer>
-    <p>&copy; 2024 NinjavaScript by Rika Maeda</p>
-  </footer>
 
 
 

@@ -4,7 +4,7 @@ body {
   background-color: #f8f9fa; /* ページ全体の背景色 */
 }
 
-/* ninjavaスクリプトのタイトルロゴとログアウト画面 */
+/* Ninjavaスクリプトのタイトルロゴとログアウト画面 */
 .header {
   display: flex;
   flex-direction: column;
@@ -22,13 +22,13 @@ body {
 }
 
 .logo {
+  font-family: 'Pixelify Sans', sans-serif;
   font-size: 2em;
   color: green; /* 必要に応じて色を調整 */
 }
 
 .logout-link {
   font-size: 14px;
-  margin-bottom: 5px;
 }
 
 

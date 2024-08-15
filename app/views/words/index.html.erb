@@ -1,0 +1,20 @@
+<h1><%="#{@user.nickname}さんの単語一覧"%></h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>単語</th>
+      <th>意味</th>
+      <th>例文</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @words.each do |word| %>
+      <tr>
+        <td><%= word.word %></td>
+        <td><%= word.meaning %></td>
+        <td><%= word.example %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

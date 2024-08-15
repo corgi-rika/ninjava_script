@@ -6,13 +6,29 @@ body {
   font-size: 1.2em;
   color: #2c3e50;
   background-color: #f7f7f7;
-  margin: 20px;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
+.content{
+  flex-grow: 1;
+}
 h1 {
   color: #34495e;
   font-size: 2em;
   margin-bottom: 20px;
+}
+
+.text-center {
+  text-align: center;/* 中央揃え */
+}
+
+/* "〇〇さん、ようこそ！"の部分。 */
+.top-spacing {
+  margin-top: 0px; /* これを調整して、さらに上に移動させる */
+  padding-top: 0px; /* これも調整して、さらに上に移動させる */
 }
 
 p {
@@ -23,6 +39,8 @@ p {
 ul {
   list-style-type: none; /* デフォルトのリストスタイルを削除 */
   padding: 0;
+  margin: 0 auto; /* 左右の余白を自動にすることで中央に配置 */
+  width: fit-content; /* リストの幅を内容に合わせる */
 }
 
 li {
@@ -31,6 +49,7 @@ li {
   border-radius: 5px;
   background-color: #ecf0f1; /* 背景色を薄いグレーに */
   font-weight: bold; /* 太字で強調 */
+  text-align: center; /* テキストを中央寄せ */
 }
 
 a {
@@ -58,7 +77,6 @@ footer {
   color: #ecf0f1;
   text-align: center;
   padding: 10px;
-  position: fixed;
   bottom: 0;
   width: 100%;
 }
