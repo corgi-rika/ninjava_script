@@ -2,10 +2,7 @@
 <html>
   <head>
     <title>NinjavaScript</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%# NinjavaScriptのタイトルロゴ %>
-    <div class="header"><h1>NinjavaScript</h1></div>
-    
+    <meta name="viewport" content="width=device-width,initial-scale=1">    
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -14,6 +11,20 @@
   </head>
 
   <body>
+
+    <%# NinjavaScriptのタイトルロゴ %>
+    <div class="header">
+      <div class= "logo_container">
+        <img id= "dog_logo" src="<%= asset_path('logo.png') %>" alt="NinjavaScript mascot" />
+        <h1 class="logo">NinjavaScript</h1>
+      </div>
+      <% if user_signed_in? %>
+        <%= link_to 'ログアウト', destroy_user_session_path, data: { turbo_method: :delete }, class: "logout-link" %>
+      <% end %>
+    </div>
+
     <%= yield %>
+
+
   </body>
 </html>

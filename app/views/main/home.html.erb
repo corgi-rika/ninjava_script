@@ -1,13 +1,16 @@
 
 <h1><%= current_user.nickname %>さん、ようこそNinjavaScriptへ！</h1>
 <p>今日も日本語学習を頑張りましょう！</p>
-
 <p><%= current_user.nickname %>さんのメンターは<%# <%= current_user.mentor.nickname %>さんです</p>
 
 <ul>
   <li>
     <%= link_to '単語登録 -Word Registration-', '#' %>
     <span class="language">たんごとうろく</span>
+  </li>
+  <li>
+    <%= link_to "#{current_user.nickname}さんの単語帳 -Your Wordbook-", '#' %>
+    <span class="language">さんのたんごちょう</span>
   </li>
   <li>
     <%= link_to 'クイズ画面 -Quiz Screen-', '#' %>
