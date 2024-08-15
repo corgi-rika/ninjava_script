@@ -14,10 +14,13 @@
 
     <%# NinjavaScriptのタイトルロゴ %>
     <div class="header">
+        <%= link_to root_path do %>
       <div class= "logo_container">
-        <img id= "dog_logo" src="<%= asset_path('logo.png') %>" alt="NinjavaScript mascot" />
-        <h1 class="logo">NinjavaScript</h1>
+          <img id= "dog_logo" src="<%= asset_path('logo.png') %>" alt="NinjavaScript mascot" />
+          <h1 class="logo">NinjavaScript</h1>
       </div>
+        <% end %>
+      <%= "#{current_user.nickname}さん"%>
       <% if user_signed_in? %>
         <%= link_to 'ログアウト', destroy_user_session_path, data: { turbo_method: :delete }, class: "logout-link" %>
       <% end %>
