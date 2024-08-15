@@ -1,6 +1,12 @@
 class WordsController < ApplicationController
   before_action :set_user
 
+# 学習者が登録した単語を取得する処理
+  def index
+    @words = @user.words.order(created_at: :desc)
+  end
+
+
   def new
     @word = Word.new
   end
