@@ -1,24 +1,28 @@
-<h1>単語登録</h1>
+<div class="form-container">
 
-<%= form_with model: [@user, @word], local: true do |form| %>
-  <div class="field">
-    <%= form.label :word, "単語" %>
-    <%= form.text_field :word %>
-  </div>
+  <h1>単語登録</h1>
 
-  <div class="field">
-    <%= form.label :meaning, "意味" %>
-    <%= form.text_field :meaning %>
-  </div>
+  <%= form_with model: [@user, @word], local: true do |form| %>
+    <div class="field">
+      <%= form.label :word, "単語" %>
+      <%= form.text_field :word, placeholder: "例: 犬"  %>
+    </div>
 
-  <div class="field">
-    <%= form.label :example, "例文" %>
-    <%= form.text_area :example %>
-  </div>
+    <div class="field">
+      <%= form.label :meaning, "意味" %>
+      <%= form.text_field :meaning, placeholder: "例: dog" %>
+    </div>
 
-  <div class="actions">
-    <%= form.submit "登録" %>
-  </div>
-<% end %>
+    <div class="field">
+      <%= form.label :example, "例文" %>
+      <%= form.text_area :example, placeholder: "例:その犬はふわふわで可愛いです", class: "example-textarea" %>
+    </div>
 
-<%= link_to '戻る', root_path %>
+    <div class="actions">
+      <%= form.submit "登録" %>
+    </div>
+  <% end %>
+
+  <%= link_to '戻る', root_path %>
+
+</div>
