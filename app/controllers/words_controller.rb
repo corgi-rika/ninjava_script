@@ -45,12 +45,16 @@ class WordsController < ApplicationController
   private
 
   def set_user
-    @user = User.find(params[:user_id])
+    @user = User.find_by(id: params[:user_id])
+    # 他の学習者のidを使用してアクセスしようとした場合にトップページにリダイレクトされる
+    if @user.nil?
+      redirect_to root_path, alert: '指定されたユーザーは存在しません。'
+    end
   end
 
   def set_word
     @word = @user.words.find_by(id: params[:id])
-    # 削除済みの単語の詳細ページにアクセスしようとした場合にトップページにリダイレクト
+    # 削除済みの単語の詳細ページにアクセスしようとした場合にトップページにリダイレクトされる
     if @word.nil?
       redirect_to root_path, alert: '指定された単語は存在しません。'
     end
