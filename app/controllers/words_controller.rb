@@ -32,8 +32,8 @@ class WordsController < ApplicationController
   def update
     if @word.update(word_params)
       redirect_to user_word_path(@user, @word)
-    # else
-    #   render :edit, status: :unprocessable_entity
+    else
+      render :edit, status: :unprocessable_entity
     end
   end
 
