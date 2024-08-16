@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'main#home'
 
   resources :users, only: [] do
-    resources :words, only: [:index, :new, :create]
+    resources :words, only: [:index, :new, :create, :show]
   end
 end
 
