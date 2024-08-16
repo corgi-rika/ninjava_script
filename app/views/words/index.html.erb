@@ -10,11 +10,13 @@
   </thead>
   <tbody>
     <% @words.each do |word| %>
+      <%# TODO: 後でJavaScriptを使用して、行全体をクリック可能にする %>
       <tr>
-        <td><%= word.word %></td>
-        <td><%= word.meaning %></td>
-        <td><%= word.example %></td>
+        <td><%= link_to word.word, user_word_path(@user, word) %></td>
+        <td><%= link_to word.meaning, user_word_path(@user,word) %></td>
+        <td><%= link_to word.example, user_word_path(@user, word) %></td>
       </tr>
+
     <% end %>
   </tbody>
 </table>

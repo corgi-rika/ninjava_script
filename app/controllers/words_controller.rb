@@ -1,9 +1,14 @@
 class WordsController < ApplicationController
   before_action :set_user
+  before_action :set_word, only: [:show]
 
 # 学習者が登録した単語を取得する処理
   def index
     @words = @user.words.order(created_at: :desc)
+  end
+
+  def show
+
   end
 
 
@@ -24,6 +29,10 @@ class WordsController < ApplicationController
 
   def set_user
     @user = User.find(params[:user_id])
+  end
+
+  def set_word
+    @word = @user.words.find(params[:id])
   end
 
   def word_params

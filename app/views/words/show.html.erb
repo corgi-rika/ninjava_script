@@ -1,0 +1,23 @@
+<div class="word-detail">
+  <h1>単語詳細</h1>
+  <table class="word-table">
+    <tr>
+      <th>単語</th>
+      <td><%= @word.word %></td>
+    </tr>
+    <tr>
+      <th>意味</th>
+      <td><%= @word.meaning %></td>
+    </tr>
+    <tr>
+      <th>例文</th>
+      <td><%= @word.example %></td>
+    </tr>
+  </table>
+
+  <div class="actions">
+    <%= link_to '編集', '#' %> |
+    <%= link_to '削除', '#', data: { turbo_method: :delete } %> |
+    <%= link_to '戻る', user_words_path(@user) %>
+  </div>
+</div>

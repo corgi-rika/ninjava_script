@@ -1,0 +1,16 @@
+/* 単語詳細ページ用スタイル */
+.word-detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.word-detail p {
+  margin: 10px 0;
+}
+
+.actions {
+  margin-top: 20px;
+}
