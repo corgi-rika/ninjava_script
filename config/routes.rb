@@ -3,13 +3,6 @@ Rails.application.routes.draw do
   root to: 'main#home'
 
   resources :users, only: [] do
-    resources :words, only: [:index, :new, :create, :show]
+    resources :words, only: [:index, :show, :new, :create, :destroy]
   end
 end
-
-# Rails.application.routes.draw do
-#   get 'main/home'
-#   devise_for :users
-
-#   root 'main#home'  # ここで `main` コントローラの `home` アクションをトップページに設定
-# end
