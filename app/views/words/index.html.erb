@@ -1,22 +1,29 @@
-<h1><%="#{@user.nickname}さんの単語一覧"%></h1>
+<div class="word-detail">
 
-<table>
-  <thead>
-    <tr>
-      <th>単語</th>
-      <th>意味</th>
-      <th>例文</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @words.each do |word| %>
-      <%# TODO: 後でJavaScriptを使用して、行全体をクリック可能にする %>
+  <h1><%="#{@user.nickname}さんの単語一覧"%></h1>
+
+  <table>
+    <thead>
       <tr>
-        <td><%= link_to word.word, user_word_path(@user, word) %></td>
-        <td><%= link_to word.meaning, user_word_path(@user,word) %></td>
-        <td><%= link_to word.example, user_word_path(@user, word) %></td>
+        <th>単語</th>
+        <th>意味</th>
+        <th>例文</th>
       </tr>
+    </thead>
+    <tbody>
+      <% @words.each do |word| %>
+        <%# TODO: 後でJavaScriptを使用して、行全体をクリック可能にする %>
+        <tr>
+          <td><%= link_to word.word, user_word_path(@user, word) %></td>
+          <td><%= link_to word.meaning, user_word_path(@user,word) %></td>
+          <td><%= link_to word.example, user_word_path(@user, word) %></td>
+        </tr>
 
-    <% end %>
-  </tbody>
-</table>
+      <% end %>
+    </tbody>
+  </table>
+
+  <div class="actions">
+    <%= link_to '戻る', root_path %>
+  </div>
+</div>

@@ -1,9 +1,10 @@
 class WordsController < ApplicationController
   before_action :set_user
-  before_action :set_word, only: [:show]
+  before_action :set_word, only: [:show, :destroy]
 
-# 学習者が登録した単語を取得する処理
+
   def index
+    # 学習者が登録した単語を取得する処理
     @words = @user.words.order(created_at: :desc)
   end
 
@@ -23,6 +24,11 @@ class WordsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @word.destroy
+    redirect_to user_words_path(@user), notice: '単語が削除されました。'
   end
 
   private
