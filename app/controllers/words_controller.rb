@@ -38,7 +38,11 @@ class WordsController < ApplicationController
   end
 
   def set_word
-    @word = @user.words.find(params[:id])
+    @word = @user.words.find_by(params[:id])
+    # 削除済みの単語の詳細ページにアクセスしようとした場合にトップページにリダイレクト
+    if @word.nil?
+      redirect_to root_path, alert: '指定された単語は存在しません。'
+    end
   end
 
   def word_params
