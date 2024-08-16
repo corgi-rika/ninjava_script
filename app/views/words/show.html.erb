@@ -16,8 +16,8 @@
   </table>
 
   <div class="actions">
-    <%= link_to '編集', '#' %> |
-    <%= link_to '削除', '#', data: { turbo_method: :delete } %> |
+    <%= link_to '編集', edit_user_word_path(@user, @word) %> |
+    <%= link_to '削除', user_word_path(@user, @word), data: { turbo_method: :delete } %> |
     <%= link_to '戻る', user_words_path(@user) %>
   </div>
 </div>
