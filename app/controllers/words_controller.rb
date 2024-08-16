@@ -1,11 +1,11 @@
 class WordsController < ApplicationController
   before_action :set_user
   before_action :set_word, only: [:show, :edit, :update, :destroy]
+  before_action :authorize_user # アクセス制御を追加。これでユーザーは他のユーザーのページを閲覧することはできない
 
 
   def index
-    # 学習者が登録した単語を取得する処理
-    @words = @user.words.order(created_at: :desc)
+    @words = @user.words.order(created_at: :desc)# 学習者が登録した単語を取得する処理
   end
 
   def show
@@ -53,6 +53,12 @@ class WordsController < ApplicationController
     # 削除済みの単語の詳細ページにアクセスしようとした場合にトップページにリダイレクト
     if @word.nil?
       redirect_to root_path, alert: '指定された単語は存在しません。'
+    end
+  end
+
+  def authorize_user
+    unless @user == current_user
+      redirect_to root_path
     end
   end
 
