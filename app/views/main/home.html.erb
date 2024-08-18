@@ -8,17 +8,24 @@
 
 <ul>
   <li>
-    <%= link_to '単語登録 -Word Registration-', new_user_word_path(current_user) %>
+    <%= link_to '単語登録 -Add Word -', new_user_word_path(current_user) %>
     <span class="language">たんごとうろく</span>
   </li>
   <li>
     <%= link_to "#{current_user.nickname}さんの単語帳 -Your Wordbook-", user_words_path(current_user) %>
     <span class="language"><%= "#{current_user.nickname}さんのたんごちょう" %></span>
   </li>
-  <li>
-    <%= link_to 'クイズ画面 -Quiz Screen-', '#' %>
-    <span class="language">くいずがめん</span>
-  </li>
+    <% if current_user.words.any? %>  <!-- 単語が存在する場合のみ表示 -->
+    <% @word = current_user.words.sample %> <!-- ランダムで一つの単語を選ぶ -->
+    <li>
+      <%= link_to '単語テスト -Word Quiz-', user_word_quizzes_path(current_user, @word.id) %>
+      <span class="language">たんごてすと</span>
+    </li>
+  <% else %> <!-- 単語が存在しない場合 -->
+    <li>
+      <p>クイズを開始するには、まず単語を登録してください。</p>
+    </li>
+  <% end %>
   <li>
     <%= link_to '進捗確認 -Progress Check-', '#' %>
     <span class="language">しんちょくかくにん</span>

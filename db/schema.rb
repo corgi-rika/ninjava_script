@@ -10,7 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_08_15_101110) do
+ActiveRecord::Schema[7.0].define(version: 2024_08_17_145307) do
+  create_table "quizzes", charset: "utf8", force: :cascade do |t|
+    t.bigint "word_id", null: false
+    t.string "question"
+    t.string "correct_answer"
+    t.string "option1"
+    t.string "option2"
+    t.string "option3"
+    t.string "option4"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["word_id"], name: "index_quizzes_on_word_id"
+  end
+
   create_table "users", charset: "utf8", force: :cascade do |t|
     t.string "nickname", null: false
     t.string "first_name", null: false
@@ -38,5 +51,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_08_15_101110) do
     t.index ["user_id"], name: "index_words_on_user_id"
   end
 
+  add_foreign_key "quizzes", "words"
   add_foreign_key "words", "users"
 end

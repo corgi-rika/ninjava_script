@@ -31,7 +31,13 @@
     </div>
 
     <div class="content">
-      <%= yield %>
+
+      <%# flashメッセージの表示部分 %>
+    <% flash.each do |key, message| %>
+      <div class="flash <%= key %>"><%= message %></div>
+    <% end %>
+
+    <%= yield %>
     </div>
 
     <%# フッター %>
