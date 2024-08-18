@@ -1,13 +1,11 @@
 /* 一般スタイル */
-body {
+/* body {
   background-color: #f0f4f8;
   color: #333;
   font-family: 'Kosugi Maru', sans-serif;
-}
+} */
 
 .header, .footer {
-  /* background-color: #004225; */
-  padding: 20px;
   text-align: center;
   color: #333;
 }

@@ -1,7 +1,7 @@
 /* メイン画面 */
 
 
-body {
+/* body {
   font-family: 'Noto Sans JP', sans-serif;
   font-size: 1.2em;
   color: #2c3e50;
@@ -10,7 +10,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-}
+} */
 
 .content{
   flex-grow: 1;

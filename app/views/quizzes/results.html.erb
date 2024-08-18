@@ -1,0 +1,15 @@
+<!-- app/views/quizzes/results.html.erb -->
+<h1>クイズの結果</h1>
+<p>お疲れ様でした！すべての問題が終了しました。</p>
+<%= link_to 'ホームに戻る', root_path %>
+<% if @word.present? %>
+  <%= link_to 'もういちどテストをする', user_word_quizzes_path(current_user, @word.id) %>
+<% else %>
+  <p>クイズに戻るための情報が見つかりませんでした。</p>
+<% end %>
+
+<%# if session[:quiz_count] >= 10
+  redirect_to user_results_path(@user, word_id: @word.id)
+else
+  session[:quiz_count] += 1
+end %>

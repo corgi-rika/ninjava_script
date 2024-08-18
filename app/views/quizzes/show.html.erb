@@ -1,0 +1,11 @@
+<h2>クイズ結果</h2>
+
+<p>あなたの答え: <%= @selected_word %></p>
+<p>答え: <%= @quiz.correct_answer %></p>
+<p>意味: <%= @quiz.word.meaning %></p>
+<p>例文: <%= @quiz.word.example %></p>
+
+<div class="actions">
+  <%= link_to '次のクイズ', user_word_quizzes_path(@user, @word) %> | 
+  <%= link_to 'ホームへ戻る', root_path %>
+</div>
