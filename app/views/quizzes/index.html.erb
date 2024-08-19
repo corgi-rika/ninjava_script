@@ -1,15 +1,19 @@
 <div class="quiz-container">
   <h2 class="quiz-title"><%= "#{@user.nickname}さんの単語テスト" %></h2>
+    <p class="quiz-status">10回中<%= session[:quiz_count] %>回目のクイズです。</p>
   <p class="quiz-question">この意味を持つ単語は何ですか？</p>
 
   <h3 class="quiz-word-meaning"><%= @word.meaning %></h3>
 
   <ul class="quiz-options">
-  <% @options.each do |option| %>
-    <li>
-      <%= link_to option, user_word_quiz_path(@user, @word, @quiz, answer: option), class: "quiz-button", data: { answer: option, correct: @quiz.correct_answer } %>
-    </li>
-  <% end %>
+    <% @options.each do |option| %>
+      <li>
+        <%= link_to option, user_word_quiz_path(@user, @word, @quiz, answer: option), class: "quiz-button", data: { answer: option, correct: @quiz.correct_answer } %>
+      </li>
+    <% end %>
   </ul>
 </div>
-<%= link_to '戻る', root_path %>
+
+<div class="actions">
+  <%= link_to 'ホームへ戻る', root_path %>
+</div>

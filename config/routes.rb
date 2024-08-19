@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     end
   end
 
-  get 'results/:user_id', to: 'quizzes#results', as: 'user_results'
+  get 'results/:user_id/:word_id', to: 'quizzes#results', as: 'user_results'
   # 結果ページへのルート
 
 end

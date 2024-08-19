@@ -1,10 +1,12 @@
 <%# /Users/admin/projects/ninjava_script/app/views/quizzes/show.html.erb %>
-<h2>クイズ結果</h2>
+  <h2>クイズ結果</h2>
+<% if @selected_word != @correct_word %>
+  <p>あなたの答え: <%= @selected_word %></p>
+<% end %>
 
-<p>あなたの答え: <%= @selected_word %></p>
-<p>答え: <%= @quiz.correct_answer %></p>
-<p>意味: <%= @quiz.word.meaning %></p>
-<p>例文: <%= @quiz.word.example %></p>
+  <p>答え: <%= @quiz.correct_answer %></p>
+  <p>意味: <%= @quiz.word.meaning %></p>
+  <p>例文: <%= @quiz.word.example %></p>
 
 <div class="actions">
   <%= link_to '次のクイズ', user_word_quizzes_path(@user, @word) %> | 

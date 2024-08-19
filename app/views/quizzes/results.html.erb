@@ -1,11 +1,11 @@
 <!-- app/views/quizzes/results.html.erb -->
 <h1>クイズの結果</h1>
-<p>10問中<%= @correct_count %> 問正解でした！</p>
+<p>正解数: <%= @correct_count %> 問</p>
 
 <div class="actions">
 <%= link_to 'ホームに戻る', root_path %> |
 <% if @word.present? %>
-  <%= link_to 'もういちどテストをする', user_word_quizzes_path(current_user, @word.id) %> 
+  <%= link_to 'もういちどテストをする', user_word_quizzes_path(@user, @word) %> 
 <% else %>
   <p>クイズに戻るための情報が見つかりませんでした。</p>
 <% end %>
