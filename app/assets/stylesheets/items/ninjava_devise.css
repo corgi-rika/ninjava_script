@@ -2,25 +2,37 @@
 body {
   font-family: 'M PLUS Rounded 1c', sans-serif; /* フォントを指定 */
   background-color: #f8f9fa; /* ページ全体の背景色 */
-  /* font-family: 'Noto Sans JP', sans-serif; */
   font-size: 1.2em;
   color: #2c3e50;
-  background-color: #f7f7f7;
-  /* background-color: #f7f7f7; */
-  margin: 0;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-}
+  justify-content: center; /* 縦方向の中央揃え */
+  align-items: center;/* 横方向の中央揃え */
+} 
 
-/* Ninjavaスクリプトのタイトルロゴとログアウト画面 */
+
 .header {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
   max-width: 1440px;
 }
 
+/* Ninjavaスクリプトのタイトルロゴとログアウト画面 */
+.logo-header {
+  display: flex;
+  justify-content: space-between; /* 左右に要素を配置 */
+  align-items: center;
+  
+  width: 100%; /* ヘッダーをページ幅いっぱいに広げる */
+  padding: 10px 20px; /* 上下左右の余白を設定 */
+  box-sizing: border-box; /* パディング込みの幅を設定 */
+  position: absolute; /* ヘッダーをページの最上部に固定 */
+  top: 0; /* 上部から0px */
+  left: 0; /* 左端から0px */
+}
+/* ロゴとタイトルのスタイル */
 .logo_container{
   display: flex;
   align-items: center;
@@ -36,6 +48,13 @@ body {
   color: green; /* 必要に応じて色を調整 */
 }
 
+.name_and_logout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-right: 90px;
+}
 .logout-link {
   font-size: 14px;
 }
@@ -47,13 +66,14 @@ body {
 /* フォームのスタイル */
 .form-for {
   width: 100%;
-  max-width: 400px; /* ここで幅を調整 */
+  max-width: 500px;
   margin: 0 auto;
   padding: 20px;
   background-color: #ffffff;
-  border: 1px solid #2E8B57; /* フォームの枠線 */
+  border: 1px solid #2E8B57;
   border-radius: 10px;
 }
+
 
 /* ラベルと入力フィールドのスタイル */
 .field label {
@@ -61,10 +81,11 @@ body {
   font-weight: bold;
 }
 
+/* 入力フィールドの幅を100%にして全体に広げる */
 .field input[type="text"],
 .field input[type="email"],
 .field input[type="password"] {
-  width: 20%; /* フィールドの幅を20%に設定 */
+  width: 100%; /* フィールドの幅を100%に設定 */
   padding: 10px;
   margin-top: 5px;
   margin-bottom: 15px;
@@ -85,4 +106,14 @@ body {
 
 .actions input[type="submit"]:hover {
   background-color: #006400; /* ボタンのホバー時の色 */
+}
+
+/* 必須ラベルのスタイル */
+.required-label {
+  background-color: #2E8B57; /* 緑色の背景 */
+  color: #fff; /* 白文字 */
+  padding: 2px 4px; /* ラベルの内側余白 */
+  border-radius: 3px; /* 角を丸く */
+  font-size: 0.8em; /* 少し小さく */
+  margin-left: 10px; /* ラベルとスペースを空ける */
 }

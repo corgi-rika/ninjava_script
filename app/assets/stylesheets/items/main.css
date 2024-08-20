@@ -4,6 +4,7 @@
 
 
 .content{
+  padding-top: 50px;
   flex-grow: 1;
 }
 h1 {
@@ -18,8 +19,8 @@ h1 {
 
 /* "〇〇さん、ようこそ！"の部分。 */
 .top-spacing {
-  margin-top: 0px; /* これを調整して、さらに上に移動させる */
-  padding-top: 0px; /* これも調整して、さらに上に移動させる */
+  margin-top: 60px; /* これを調整して、さらに下に移動させる */
+  padding-bottom: 0px; /* これも調整して、さらに上に移動させる */
 }
 
 p {

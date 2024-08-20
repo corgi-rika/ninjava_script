@@ -18,7 +18,7 @@
   <body>
 
     <%# NinjavaScriptのタイトルロゴ %>
-    <div class="header">
+    <div class="logo-header">
       <%= link_to root_path do %>
       <div class="logo_container">
         <img id="dog_logo" src="<%= asset_path('logo.png') %>" alt="NinjavaScript mascot" />
@@ -26,24 +26,27 @@
       </div>
       <% end %>
       <% if user_signed_in? %>
+        <div class="name_and_logout">
         <%= "#{current_user.nickname}さん" %>
         <%= link_to 'ログアウト', destroy_user_session_path, data: { turbo_method: :delete }, class: "logout-link" %>
+        </div>
       <% end %>
     </div>
 
     <div class="content">
 
-    <%# flashメッセージの表示部分 %>
-  <% if flash[:notice] %>
-    <div class="flash-notice">
-    <%= flash[:notice] %>
-    </div>
-  <% end %>
+      <%# flashメッセージの表示部分 %>
+      <% if flash[:notice] %>
+        <div class="flash-notice">
+        <%= flash[:notice] %>
+        </div>
+      <% end %>
 
 
     <%= yield %>
     </div>
-     <%# 正解・不正解時のモーダル加 %>
+    
+    <%# 正解・不正解時のモーダル加 %>
     <div id="quiz-modal" class="quiz-modal">
       <div class="quiz-modal-content">
         <span id="quiz-modal-message"></span>

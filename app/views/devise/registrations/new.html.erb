@@ -5,37 +5,44 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
-    <%= f.label :nickname %><br />
+    <%= f.label :nickname %>
+    <span class="required-label">必須</span><br />
     <%= f.text_field :nickname, autofocus: true %>
   </div>
 
   <div class="field">
-    <%= f.label :first_name %><br />
+    <%= f.label :first_name %>
+    <span class="required-label">必須</span><br />
     <%= f.text_field :first_name %>
   </div>
 
   <div class="field">
-    <%= f.label :last_name %><br />
+    <%= f.label :last_name %>
+    <span class="required-label">必須</span><br />
     <%= f.text_field :last_name %>
   </div>
 
   <div class="field">
-    <%= f.label :first_name_kana %><br />
+    <%= f.label :first_name_kana %>
+    <span class="required-label">必須</span><br />
     <%= f.text_field :first_name_kana %>
   </div>
 
   <div class="field">
-    <%= f.label :last_name_kana %><br />
+    <%= f.label :last_name_kana %>
+    <span class="required-label">必須</span><br />
     <%= f.text_field :last_name_kana %>
   </div>
 
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :email %>
+    <span class="required-label">必須</span><br />
     <%= f.email_field :email, autocomplete: "email" %>
   </div>
 
   <div class="field">
     <%= f.label :password %>
+    <span class="required-label">必須</span><br />
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
@@ -43,7 +50,8 @@
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
+    <%= f.label :password_confirmation %>
+    <span class="required-label">必須</span><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
