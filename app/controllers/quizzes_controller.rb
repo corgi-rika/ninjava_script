@@ -17,10 +17,16 @@ class QuizzesController < ApplicationController
     Rails.logger.info "Current Quiz Count: #{session[:quiz_count]}"  # クイズカウントをログに出力
 
 
-    # ランダムに単語を選ぶ
-    @word = @user.words.order("RAND()").first
-    correct_word = @word
-    other_words = Word.where.not(id: correct_word.id).order("RAND()").limit(3)
+    # ランダムに単語を選ぶ処理をデータベースに応じて変更
+    if ActiveRecord::Base.connection.adapter_name == 'PostgreSQL'
+      @word = @user.words.order("RANDOM()").first
+      correct_word = @word
+      other_words = Word.where.not(id: @word.id).order("RANDOM()").limit(3)
+    else
+      @word = @user.words.order("RAND()").first
+      correct_word = @word
+      other_words = Word.where.not(id: @word.id).order("RAND()").limit(3)
+    end
 
     # 動的にクイズオプションを生成する
     @options = other_words.pluck(:meaning).append(correct_word.meaning).shuffle
