@@ -2,7 +2,11 @@
 <div class="top-spacing text-center">
   <h1><%= current_user.nickname %>さん、ようこそNinjavaScriptへ！</h1>
   <p>今日も日本語学習を頑張りましょう！</p>
-  <p><%= current_user.nickname %>さんのメンターは<%# <%= current_user.mentor.nickname %>さんです</p>
+  <% if false %><%# <% if current_user.mentor.present? %><%# を一時的に無効化 %>
+    <p><%= current_user.nickname %>さんのメンターは<%= current_user.mentor.nickname %>さんです</p>
+  <% else %>
+    <p><%= current_user.nickname %>さんのメンターはまだいません。登録をおねがいします。</p>
+  <% end %>
 </div>
 
 
@@ -15,7 +19,7 @@
     <%= link_to "#{current_user.nickname}さんの単語帳 -Your Wordbook-", user_words_path(current_user) %>
     <span class="language"><%= "#{current_user.nickname}さんのたんごちょう" %></span>
   </li>
-    <% if current_user.words.any? %>  <!-- 単語が存在する場合のみ表示 -->
+    <% if current_user.words.count >= 4 %>  <!-- 単語が4つ以上存在する場合のみ表示 -->
     <% @word = current_user.words.sample %> <!-- ランダムで一つの単語を選ぶ -->
     <li>
       <%= link_to '単語テスト -Word Quiz-', user_word_quizzes_path(current_user, @word.id) %>
@@ -23,12 +27,12 @@
     </li>
   <% else %> <!-- 単語が存在しない場合 -->
     <li>
-      <p>クイズを開始するには、まず単語を登録してください。</p>
+      <p>テストを開始するには、まず単語を登録してください。</p>
     </li>
   <% end %>
   <li>
-    <%= link_to '進捗確認 -Progress Check-', '#' %>
-    <span class="language">しんちょくかくにん</span>
+    <%= link_to '日報 -Progress Check-', '#' %>
+    <span class="language">にっぽう</span>
   </li>
   <li>
     <%= link_to 'コメント入力 -Comment Input- (メンターのみ)', '#' %>
