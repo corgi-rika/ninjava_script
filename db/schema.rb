@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_08_17_145307) do
+ActiveRecord::Schema[7.0].define(version: 2024_08_20_084154) do
   create_table "quizzes", charset: "utf8", force: :cascade do |t|
     t.bigint "word_id", null: false
     t.string "question"
@@ -48,6 +48,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_08_17_145307) do
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "hiragana"
     t.index ["user_id"], name: "index_words_on_user_id"
   end
 
