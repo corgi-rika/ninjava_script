@@ -2,10 +2,20 @@ class QuizzesController < ApplicationController
   before_action :set_user
   before_action :set_word, only: [:show, :index]
 
+  def reset_session
+    session[:quiz_count] = 0
+    session[:correct_count] = 0
+    session[:already_counted] = nil
+    redirect_to root_path, notice: 'クイズを中断しました'
+  end
+
   def index
     session[:quiz_count] ||= 0
     session[:correct_count] ||= 0
     session[:already_counted] = nil  # クイズが始まる前にフラグをリセット
+
+    Rails.logger.info "Current Quiz Count: #{session[:quiz_count]}"  # クイズカウントをログに出力
+
 
     # ランダムに単語を選ぶ
     @word = @user.words.order("RAND()").first
@@ -13,17 +23,24 @@ class QuizzesController < ApplicationController
     other_words = Word.where.not(id: correct_word.id).order("RAND()").limit(3)
 
     # 動的にクイズオプションを生成する
-    @options = other_words.pluck(:word).append(correct_word.word).shuffle
+    @options = other_words.pluck(:meaning).append(correct_word.meaning).shuffle
 
-    # クイズを一問作成
     @quiz = Quiz.create!(
       word: correct_word,
-      correct_answer: correct_word.word,
-      option1: other_words[0].word,
-      option2: other_words[1].word,
-      option3: other_words[2].word,
-      option4: correct_word.word
+      correct_answer: correct_word.meaning,
+      option1: other_words[0].meaning,
+      option2: other_words[1].meaning,
+      option3: other_words[2].meaning,
+      option4: correct_word.meaning
     )
+
+    if @quiz.persisted?
+      Rails.logger.info "Quiz created successfully with ID: #{@quiz.id}"
+    else
+      Rails.logger.error "Quiz creation failed."
+    end
+
+
 
     if session[:quiz_count] >= 10
       redirect_to user_results_path(@user.id, word_id: @word.id) and return
