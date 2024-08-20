@@ -1,0 +1,24 @@
+.quiz-modal {
+  display: none; /* デフォルトでは非表示 */
+  position: fixed;
+  z-index: 1000; /* 高い値を設定して最前面に表示 */
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 400px;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  border-radius: 8px;
+}
+
+.quiz-modal-content {
+  margin: 0;
+}
+
+.quiz-modal-content span {
+  font-size: 1.2em;
+  color: #333;
+}

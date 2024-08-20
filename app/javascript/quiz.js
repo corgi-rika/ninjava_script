@@ -1,5 +1,8 @@
+// /Users/admin/projects/ninjava_script/app/javascript/quiz.js
 document.addEventListener('turbo:load', function() {
   const quizButtons = document.querySelectorAll('.quiz-button');
+  const quizModal = document.getElementById('quiz-modal');
+  const quizModalMessage = document.getElementById('quiz-modal-message');
   
   quizButtons.forEach(button => {
     button.addEventListener('click', function(event) {
@@ -8,11 +11,13 @@ document.addEventListener('turbo:load', function() {
       const correctAnswer = button.dataset.correct;
 
       if (userAnswer === correctAnswer) {
-        alert('すばらしい！正解です！');
+        quizModalMessage.textContent = 'すばらしい！正解です！';
       } else {
-        alert('ざんねん！不正解です。');
+        quizModalMessage.textContent = 'ざんねん！不正解です。';
       }
-
+      
+      // モーダルを表示
+      quizModal.style.display = 'block';
       // 1秒の遅延後に指定されたURLに遷移
       setTimeout(() => {
         window.location.href = button.href; // 正しいリンクを取得していることを確認
