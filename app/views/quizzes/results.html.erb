@@ -1,15 +1,16 @@
 <!-- app/views/quizzes/results.html.erb -->
-<div class="quiz-result-container">
-  <h1>クイズの結果</h1>
-  <p>正解数: <%= @correct_count %> 問</p>
+<div class="quiz-container">
+  <div class="quiz-result-container">
+    <h1>クイズの結果</h1>
+    <p>正解数: <%= @correct_count %> 問</p>
 
-  <div class="actions">
-    <%= link_to 'ホームに戻る', root_path %> |
-      <% if @word.present? %>
-        <%= link_to 'もういちどテストをする', user_word_quizzes_path(@user, @word) %> 
-      <% else %>
-        <p>クイズに戻るための情報が見つかりませんでした。</p>
-      <% end %>
+    <div class="actions">
+      <%= link_to 'ホームに戻る', root_path %> |
+        <% if @word.present? %>
+          <%= link_to 'もういちどテストをする', user_word_quizzes_path(@user, @word) %> 
+        <% else %>
+          <p>クイズに戻るための情報が見つかりませんでした。</p>
+        <% end %>
+    </div>
   </div>
 </div>
-
