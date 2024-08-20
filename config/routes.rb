@@ -10,5 +10,8 @@ Rails.application.routes.draw do
 
   get 'results/:user_id/:word_id', to: 'quizzes#results', as: 'user_results'
   # 結果ページへのルート
+  delete 'reset_session/:user_id', to: 'quizzes#reset_session', as: 'reset_session'
+
+
 
 end

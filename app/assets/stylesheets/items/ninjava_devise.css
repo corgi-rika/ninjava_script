@@ -1,6 +1,6 @@
 /* 全体の背景色とフォント */
 body {
-  font-family: 'Verdana', sans-serif;
+  font-family: 'M PLUS Rounded 1c', sans-serif; /* フォントを指定 */
   background-color: #f8f9fa; /* ページ全体の背景色 */
   /* font-family: 'Noto Sans JP', sans-serif; */
   font-size: 1.2em;
