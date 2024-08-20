@@ -15,13 +15,17 @@ document.addEventListener('turbo:load', function() {
       } else {
         quizModalMessage.textContent = 'ざんねん！不正解です。';
       }
-      
+        
       // モーダルを表示
       quizModal.style.display = 'block';
-      // 1秒の遅延後に指定されたURLに遷移
+       // 0.3秒の遅延後に指定されたURLに遷移
       setTimeout(() => {
         window.location.href = button.href; // 正しいリンクを取得していることを確認
-      }, 1000);
+      }, 300);
     });
   });
 });
+
+  // クリックイベントでモーダルを表示し、その後に1秒遅延してリダイレクトを行っているが
+  // この間にセッションカウントが増加してしまい、正しく動作していない可能性あるため、
+  // すぐにリダイレクト（遅延なし）をするコード実装も検討する（デプロイ後）
