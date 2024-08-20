@@ -18,6 +18,11 @@
     </div>
 
     <div class="field">
+      <%= form.label :hiragana, "意味(ひらがな)" %><br />
+      <%= form.text_field :hiragana, placeholder: "例: いぬ", class: "wide-input" %>
+    </div>
+
+    <div class="field">
       <%= form.label :example, "例文" %>
       <span class="required-label">必須</span><br />
       <%= form.text_area :example, placeholder: "例:その犬はふわふわで可愛いです", class: "example-textarea" %>
