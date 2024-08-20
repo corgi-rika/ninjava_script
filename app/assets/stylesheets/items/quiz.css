@@ -1,0 +1,78 @@
+.quiz-container {
+  text-align: center; /* コンテンツを中央に配置 */
+  margin: 0 auto; /* 自動的に余白を均等に配置 */
+  max-width: 600px; /* 最大幅を設定して、行が長すぎないようにする */
+}
+
+.quiz-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.quiz-status, .quiz-question {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.quiz-word {
+  font-size: 22px;
+  margin-bottom: 25px;
+  color: #333; /* フォント色を濃くして見やすくする */
+}
+
+.quiz-options {
+  list-style-type: none; /* デフォルトのリストスタイルを除去 */
+  padding: 0;
+  margin: 0 auto; /* ボタンを中央に配置 */
+  display: flex; /* ボタンリスト全体を中央に配置 */
+  align-items: center;
+  justify-content: center;
+}
+
+.quiz-options li {
+  margin: 10px 0; /* 各ボタンの上下に余白を追加 */
+}
+
+.quiz-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.quiz-button:hover {
+  background-color: #e0e0e0;
+}
+
+.actions {
+  margin-top: 30px;
+  font-size: 16px;
+}
+
+.actions a {
+  margin: 0 10px; /* リンクの間隔を広げる */
+  text-decoration: none;
+  color: #007bff;
+  transition: color 0.3s;
+}
+
+.actions a:hover {
+  color: #0056b3;
+}
+
+.quiz-result-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.actions {
+  margin-top: 20px;
+}

@@ -31,7 +31,7 @@ class WordsController < ApplicationController
 
   def update
     if @word.update(word_params)
-      redirect_to user_word_path(@user, @word)
+      redirect_to user_word_path(@user, @word), notice: '変更をくわえました'
     else
       render :edit, status: :unprocessable_entity
     end
