@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   # セッションリセット用のルート
   delete 'reset_session/:user_id', to: 'quizzes#reset_session', as: 'reset_session'
 
-
+  # メンター登録用のルートを追加
+  get 'mentor_registration', to: 'mentorships#new'
+  post 'mentor_registration', to: 'mentorships#create'
 
 end

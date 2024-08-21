@@ -2,7 +2,7 @@
 <div class="top-spacing text-center">
   <h1><%= user.nickname %>さん、ようこそNinjavaScriptへ！</h1>
   <p>今日も日本語学習を頑張りましょう！</p>
-  <% if false %><%# <% if user.mentor.present? %><%# を一時的に無効化 %>
+  <% if user.mentor.present? %>
     <p><%= user.nickname %>さんのメンターは<%= user.mentor.nickname %>さんです</p>
   <% else %>
     <p><%= user.nickname %>さんのメンターはまだいません。登録をおねがいします。</p>
@@ -33,8 +33,10 @@
     <%= link_to '日報 -Progress Check-', '#' %>
     <span class="language">にっぽう</span>
   </li>
-  <li>
-    <%= link_to 'メンター登録 -Mentor Registration-', '#' %>
-    <span class="language">めんたーとうろく</span>
-  </li>
+<% unless user.mentor.present? %><!-- メンターが存在しない場合のみ表示 -->
+    <li>
+      <%= link_to 'メンター登録 -Mentor Registration-', mentor_registration_path %>
+      <span class="language">めんたーとうろく</span>
+    </li>
+<% end %>
 </ul>

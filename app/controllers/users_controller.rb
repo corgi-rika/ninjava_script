@@ -18,8 +18,11 @@ class UsersController < ApplicationController
   end
 
   def authorize_user
-    unless @user == current_user
-      redirect_to root_path
+    Rails.logger.debug "Checking authorization: @user=#{@user.id}, current_user=#{current_user.id}, mentor=#{current_user.mentor&.id}"
+
+    unless @user == current_user || @user == current_user.mentee || @user == current_user.mentor
+      redirect_to root_path, alert: "他のユーザーのプロフィールにはアクセスできません"
+
     end
   end
 

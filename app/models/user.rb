@@ -8,7 +8,8 @@ class User < ApplicationRecord
   has_many :words, dependent: :destroy
 
   # Userモデル同士でメンターと学習者の関係を作成
-  # mentor_idカラムを使って、あるユーザーのメンター（Userモデル）を関連付ける
+  # mentor_idカラムを使って、ある学習者のメンター（Userモデル）を関連付ける
+  has_one :mentee, class_name: 'User', foreign_key: 'mentor_id', dependent: :nullify
   belongs_to :mentor, class_name: 'User', optional: true
 
   # roleのバリデーション
