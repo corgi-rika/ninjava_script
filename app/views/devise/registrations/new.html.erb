@@ -7,37 +7,43 @@
   <div class="field">
     <%= f.label :nickname %>
     <span class="required-label">必須</span><br />
-    <%= f.text_field :nickname, autofocus: true %>
+    <%= f.text_field :nickname, placeholder: "ニンジャワンコ", autofocus: true %>
   </div>
 
   <div class="field">
     <%= f.label :first_name %>
     <span class="required-label">必須</span><br />
-    <%= f.text_field :first_name %>
+    <%= f.text_field :first_name, placeholder: "Taro" %>
   </div>
 
   <div class="field">
     <%= f.label :last_name %>
     <span class="required-label">必須</span><br />
-    <%= f.text_field :last_name %>
+    <%= f.text_field :last_name, placeholder: "Yamada" %>
   </div>
 
   <div class="field">
     <%= f.label :first_name_kana %>
     <span class="required-label">必須</span><br />
-    <%= f.text_field :first_name_kana %>
+    <%= f.text_field :first_name_kana, placeholder: "タロウ" %>
   </div>
 
   <div class="field">
     <%= f.label :last_name_kana %>
     <span class="required-label">必須</span><br />
-    <%= f.text_field :last_name_kana %>
+    <%= f.text_field :last_name_kana, placeholder: "ヤマダ" %>
   </div>
 
   <div class="field">
     <%= f.label :email %>
     <span class="required-label">必須</span><br />
-    <%= f.email_field :email, autocomplete: "email" %>
+    <%= f.email_field :email, placeholder: "ninjava@example.com", autocomplete: "email" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :role, "役割 (Role)" %><br />
+    <span class="required-label">必須</span><br />
+    <%= f.collection_select :role, Role.all, :id, :name, prompt: "選択してください (Please select)" %>
   </div>
 
   <div class="field">

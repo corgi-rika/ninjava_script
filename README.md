@@ -33,36 +33,22 @@ Things you may want to cover:
 | last_name_kana     | string | null: false               |
 | email              | string | null: false, unique: true |
 | encrypted_password | string | null: false               |
+| role               | integer| null: false               |
 
 - has_many :words
 - has_many :quizzes
 - has_many :feedbacks
-
-## Mentors テーブル
-
-| Column             | Type    | Options                   |
-| ------------------ | ------- | ------------------------- |
-| nickname           | string  | null: false               |
-| first_name         | string  | null: false               |
-| last_name          | string  | null: false               |
-| first_name_kana    | string  | null: false               |
-| last_name_kana     | string  | null: false               |
-| email              | string  | null: false, unique: true |
-| encrypted_password | string  | null: false               |
-| user_id            | integer | null: false, foreign_key: true |
-
-- has_many :feedbacks
-- belongs_to :user
+- belongs_to :mentor (optional)
 
 ### Words テーブル
 
-| Column  | Type   | Options     |
-| ------- | ------ | ----------- |
-| word    | string | null: false |
-| meaning | string | null: false |
-| example | text   | null: false |
+| Column    | Type   | Options     |
+| -------   | ------ | ----------- |
+| word      | string | null: false |
+| meaning   | string | null: false |
+| example   | text   | null: false |
+| hiragana  | string |
 | user_id | integer | null: false, foreign_key: true |
-
 
 - belongs_to :user
 - has_many :quizzes
@@ -79,7 +65,6 @@ Things you may want to cover:
 | option3        | string | null: false |
 | option4        | string | null: false |
 
-
 - belongs_to :word
 
 ### Feedbacks テーブル
@@ -89,7 +74,6 @@ Things you may want to cover:
 | feedback  | text   | null: false |
 | user_id   | integer | null: false, foreign_key: true |
 | mentor_id | integer | null: false, foreign_key: true |
-
 
 - belongs_to :user
 - belongs_to :mentor

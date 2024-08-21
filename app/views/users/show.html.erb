@@ -1,0 +1,19 @@
+<h1><%= @user.nickname %>さんのプロフィール</h1>
+
+<p>名前:<%= @user.first_name %> <%= @user.last_name %></p>
+<% if @user.role == 1 %>
+  <p>役割: メンター</p>
+<% else %>
+  <p>役割: 学習者</p>
+
+<% if @user.mentor.present? %>
+    <p>あなたのメンター: <%=link_to "#{@user.mentor.nickname} さん", user_path(@user.mentor) %></p>
+<% else %>
+    <p>メンターがまだ登録されていません。</p>
+<% end %>
+<% end %>
+
+<% if current_user.role == 1%>
+  <p>あなたのコード: <%= @user.code %></p>
+  <p><strong>注意:</strong> このコードはあなたの生徒以外には絶対に教えないでください。</p>
+<% end %>

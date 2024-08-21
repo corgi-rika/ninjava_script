@@ -1,0 +1,23 @@
+<%# /Users/admin/projects/ninjava_script/app/views/main/_mentor.html.erb %>
+<div class="top-spacing text-center">
+  <h1><%= user.nickname %>さん、ようこそNinjavaScriptへ！</h1>
+  <p>今日もサポートよろしくお願いします!</p>
+  <% if user.mentee.present? %>
+  <p><%= user.nickname %>さんの生徒は<%= link_to user.mentee.nickname, user_path(user.mentee) %>さんです</p>
+  <% end %>
+</div>
+
+<ul>
+  <li>
+    <%= link_to '単語登録 -Add Word -', new_user_word_path(user.mentee) %>
+  <span class="language">たんごとうろく</span>
+  </li>
+  <li>
+    <%= link_to "#{user.mentee.nickname}さんの単語帳 -Your Wordbook-", user_words_path(user.mentee) %>
+    <span class="language"><%= "#{user.mentee.nickname}さんのたんごちょう" %></span>
+  </li>
+  <li>
+    <%= link_to '日報 -Progress Check-', '#' %>
+    <span class="language">にっぽう</span>
+  </li>
+</ul>

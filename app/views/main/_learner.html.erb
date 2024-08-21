@@ -1,0 +1,42 @@
+<%# /Users/admin/projects/ninjava_script/app/views/main/_learner.html.erb %>
+<div class="top-spacing text-center">
+  <h1><%= user.nickname %>さん、ようこそNinjavaScriptへ！</h1>
+  <p>今日も日本語学習を頑張りましょう！</p>
+  <% if user.mentor.present? %>
+    <p><%= user.nickname %>さんのメンターは<%= user.mentor.nickname %>さんです</p>
+  <% else %>
+    <p><%= user.nickname %>さんのメンターはまだいません。登録をおねがいします。</p>
+  <% end %>
+</div>
+
+<ul>
+  <li>
+    <%= link_to '単語登録 -Add Word -', new_user_word_path(user) %>
+    <span class="language">たんごとうろく</span>
+  </li>
+  <li>
+    <%= link_to "#{user.nickname}さんの単語帳 -Your Wordbook-", user_words_path(user) %>
+    <span class="language"><%= "#{user.nickname}さんのたんごちょう" %></span>
+  </li>
+    <% if user.words.count >= 4 %>  <!-- 単語が4つ以上存在する場合のみ表示 -->
+    <% word = user.words.sample %> <!-- ランダムで一つの単語を選ぶ -->
+    <li>
+      <%= link_to '単語テスト -Word Quiz-', user_word_quizzes_path(user, word.id) %>
+      <span class="language">たんごてすと</span>
+    </li>
+  <% else %> <!-- 単語が存在しない場合 -->
+    <li>
+      <p>テストを開始するには、まず単語を登録してください。</p>
+    </li>
+  <% end %>
+  <li>
+    <%= link_to '日報 -Progress Check-', '#' %>
+    <span class="language">にっぽう</span>
+  </li>
+<% unless user.mentor.present? %><!-- メンターが存在しない場合のみ表示 -->
+    <li>
+      <%= link_to 'メンター登録 -Mentor Registration-', mentor_registration_path %>
+      <span class="language">めんたーとうろく</span>
+    </li>
+<% end %>
+</ul>
