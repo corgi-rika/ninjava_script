@@ -9,6 +9,10 @@
 
 <ul>
   <li>
+    <%= link_to '単語登録 -Add Word -', new_user_word_path(user.mentee) %>
+  <span class="language">たんごとうろく</span>
+  </li>
+  <li>
     <%= link_to "#{user.mentee.nickname}さんの単語帳 -Your Wordbook-", user_words_path(user.mentee) %>
     <span class="language"><%= "#{user.mentee.nickname}さんのたんごちょう" %></span>
   </li>

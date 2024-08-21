@@ -61,7 +61,7 @@ class WordsController < ApplicationController
   end
 
   def authorize_user
-    unless @user == current_user
+    unless @user == current_user || @user == current_user.mentee || @user == current_user.mentor
       redirect_to root_path
     end
   end
