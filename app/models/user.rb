@@ -7,6 +7,10 @@ class User < ApplicationRecord
   # Wordsテーブルとの関連付け
   has_many :words, dependent: :destroy
 
+  # Userモデル同士でメンターと学習者の関係を作成
+  # mentor_idカラムを使って、あるユーザーのメンター（Userモデル）を関連付ける
+  belongs_to :mentor, class_name: 'User', optional: true
+
   # roleのバリデーション
   validates :role, presence: true
 

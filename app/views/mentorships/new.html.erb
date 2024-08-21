@@ -1,0 +1,14 @@
+<%# /Users/admin/projects/ninjava_script/app/views/mentorships/new.html.erb %>
+<h2>メンター登録</h2>
+
+<%= form_with url: mentor_registration_path, method: :post do |f| %>
+  <div class="field">
+    <%= f.label :mentor_code, "メンターコードを入力してください"%>
+    <%= f.text_field :mentor_code %>
+  </div>
+  <div class="actions">
+    <%= f.submit "登録する" %>
+  </div>
+<% end %>
+
+<%= link_to 'キャンセル', root_path %>
