@@ -1,3 +1,4 @@
+<%# /Users/admin/projects/ninjava_script/app/views/layouts/application.html.erb %>
 <!DOCTYPE html>
 <html>
   <head>
@@ -27,7 +28,7 @@
       <% end %>
       <% if user_signed_in? %>
         <div class="name_and_logout">
-        <%= "#{current_user.nickname}さん" %>
+        <%= link_to "#{current_user.nickname}さん", user_path(current_user) %>
         <%= link_to 'ログアウト', destroy_user_session_path, data: { turbo_method: :delete }, class: "logout-link" %>
         </div>
       <% end %>

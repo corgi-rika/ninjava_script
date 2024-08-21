@@ -1,0 +1,14 @@
+
+<h1><%= @user.nickname %>さんのプロフィール</h1>
+
+<p>名前:<%= @user.first_name%> <%=@user.last_name %></p>
+<% if @user.role == 1 %>
+  <p>役割: メンター</p>
+<% else %>
+  <p>役割: 学習者</p>
+<% end %>
+
+
+<% if @user.role == 1%>
+  <p>あなたのコード: <%= @user.code %></p>
+<% end %>
