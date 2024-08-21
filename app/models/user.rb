@@ -6,4 +6,7 @@ class User < ApplicationRecord
 
   # Wordsテーブルとの関連付け
   has_many :words, dependent: :destroy
+
+
+  validates :role, presence: true
 end
