@@ -7,7 +7,7 @@
     <div class="actions">
       <%= link_to 'ホームに戻る', root_path %> |
         <% if @word.present? %>
-          <%= link_to 'もういちどテストをする', user_word_quizzes_path(@user, @word) %> 
+          <%= button_to 'もういちどテストをする', user_word_quizzes_path(@user, @word), method: :get, class: "quiz-link" %>
         <% else %>
           <p>クイズに戻るための情報が見つかりませんでした。</p>
         <% end %>

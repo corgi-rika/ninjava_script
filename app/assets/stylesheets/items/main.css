@@ -61,6 +61,32 @@ a:hover {
   font-weight: normal;
 }
 
+/* ４択クイズのボタンのスタイルをリンクと統一するためのスタイル */
+/* ボタンをリンクと同じ見た目にするためのスタイル */
+/* 他の部分に影響しないように、buttonだけのスタイルを追加 */
+button.quiz-link {
+  background: none; /* 背景をリセット */
+  border: none; /* ボーダーをリセット */
+  color: inherit; /* 親要素のテキストカラーを継承 */
+  font: inherit; /* 親要素のフォントを継承 */
+  padding: 0; /* パディングをリセット */
+  cursor: pointer; /* ポインターに変更 */
+  width: 100%; /* リンク全体をカバーする */
+  display: block; /* 他のリンクと同じくブロック要素に */
+  text-align: center; /* テキストを中央寄せ */
+}
+
+button.quiz-link:hover {
+  color: #2980b9; /* ホバー時のテキストカラー */
+}
+
+form {
+  display: inline; /* formタグをインラインに */
+  margin: 0;
+  padding: 0;
+}
+
+
 
 
 /* フッター */

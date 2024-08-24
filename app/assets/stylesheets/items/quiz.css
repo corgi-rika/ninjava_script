@@ -51,6 +51,9 @@
 .actions {
   margin-top: 30px;
   font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .actions a {
@@ -76,3 +79,6 @@
 .actions {
   margin-top: 20px;
 }
+
+
+
