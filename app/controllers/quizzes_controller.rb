@@ -21,11 +21,11 @@ class QuizzesController < ApplicationController
     if ActiveRecord::Base.connection.adapter_name == 'PostgreSQL'
       @word = @user.words.order("RANDOM()").first
       correct_word = @word
-      other_words = Word.where.not(id: @word.id).order("RANDOM()").limit(3)
+      other_words = @user.words.where.not(id: @word.id).order("RANDOM()").limit(3)
     else
       @word = @user.words.order("RAND()").first
       correct_word = @word
-      other_words = Word.where.not(id: @word.id).order("RAND()").limit(3)
+      other_words = @user.words.where.not(id: @word.id).order("RAND()").limit(3)
     end
 
     # 動的にクイズオプションを生成する

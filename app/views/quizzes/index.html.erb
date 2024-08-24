@@ -9,10 +9,13 @@
   <ul class="quiz-options">
     <% @options.each do |option| %>
       <li>
-        <%= link_to option, user_word_quiz_path(@user, @word, @quiz, answer: option), class: "quiz-button", data: { answer: option, correct: @quiz.correct_answer } %>
+        <a href="#" class="quiz-button" data-answer="<%= option %>" data-correct="<%= @quiz.correct_answer %>" data-url="<%= user_word_quiz_path(@user, @word, @quiz, answer: option) %>">
+          <%= option %>
+        </a>
       </li>
     <% end %>
   </ul>
+  
   <div class="actions">
   <%= button_to '次のクイズ', user_word_quizzes_path(@user, @word), method: :get, class: "quiz-link" %>
   <%= link_to 'ホームへ戻る', root_path %> |
