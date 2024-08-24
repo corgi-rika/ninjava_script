@@ -8,16 +8,22 @@
 </div>
 
 <ul>
-  <li>
-    <%= link_to '単語登録 -Add Word -', new_user_word_path(user.mentee) %>
-  <span class="language">たんごとうろく</span>
-  </li>
-  <li>
-    <%= link_to "#{user.mentee.nickname}さんの単語帳 -Your Wordbook-", user_words_path(user.mentee) %>
-    <span class="language"><%= "#{user.mentee.nickname}さんのたんごちょう" %></span>
-  </li>
-  <li>
-    <%= link_to '日報 -Progress Check-', '#' %>
-    <span class="language">にっぽう</span>
-  </li>
+  <% if user.mentee.present? %>
+    <li>
+      <%= link_to '単語登録 -Add Word -', new_user_word_path(user.mentee) %>
+    <span class="language">たんごとうろく</span>
+    </li>
+    <li>
+      <%= link_to "#{user.mentee.nickname}さんの単語帳 -Your Wordbook-", user_words_path(user.mentee) %>
+      <span class="language"><%= "#{user.mentee.nickname}さんのたんごちょう" %></span>
+    </li>
+    <li>
+      <%= link_to '日報 -Progress Check-', '#' %>
+      <span class="language">にっぽう</span>
+    </li>
+  <% else %>
+    <li>
+      <p><%="#{user.nickname}さんの学習者が登録されていません"%></p>
+    </li>
+  <% end %>
 </ul>

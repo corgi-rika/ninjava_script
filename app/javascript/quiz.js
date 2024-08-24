@@ -3,6 +3,8 @@ document.addEventListener('turbo:load', function() {
   const quizButtons = document.querySelectorAll('.quiz-button');
   const quizModal = document.getElementById('quiz-modal');
   const quizModalMessage = document.getElementById('quiz-modal-message');
+  const correctSound = document.getElementById('correct-sound');
+  const incorrectSound = document.getElementById('incorrect-sound');
   
   quizButtons.forEach(button => {
     button.addEventListener('click', function(event) {
@@ -12,20 +14,20 @@ document.addEventListener('turbo:load', function() {
 
       if (userAnswer === correctAnswer) {
         quizModalMessage.textContent = 'すばらしい！正解です！';
+        quizModalMessage.className = 'correct'; // 正解時のクラスを追加
+        correctSound.play(); // 正解時の音声を再生
       } else {
         quizModalMessage.textContent = 'ざんねん！不正解です。';
+        quizModalMessage.className = 'incorrect'; // 不正解時のクラスを追加
+        incorrectSound.play(); // 不正解時の音声を再生
       }
         
       // モーダルを表示
       quizModal.style.display = 'block';
-       // 0.3秒の遅延後に指定されたURLに遷移
+      // 1秒の遅延後に指定されたURLに遷移
       setTimeout(() => {
         window.location.href = button.href; // 正しいリンクを取得していることを確認
-      }, 300);
+      }, 1000);
     });
   });
 });
-
-  // クリックイベントでモーダルを表示し、その後に1秒遅延してリダイレクトを行っているが
-  // この間にセッションカウントが増加してしまい、正しく動作していない可能性あるため、
-  // すぐにリダイレクト（遅延なし）をするコード実装も検討する（デプロイ後）

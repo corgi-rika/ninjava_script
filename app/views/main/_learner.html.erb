@@ -21,7 +21,14 @@
     <% if user.words.count >= 4 %>  <!-- 単語が4つ以上存在する場合のみ表示 -->
     <% word = user.words.sample %> <!-- ランダムで一つの単語を選ぶ -->
     <li>
-      <%= link_to '単語テスト -Word Quiz-', user_word_quizzes_path(user, word.id) %>
+      <%# 
+        ここでは、`link_to` を `button_to` に変更しました。理由は、`link_to` を使用した場合、
+        ユーザーがリンクにカーソルを合わせただけでリクエストが発生し、
+        クイズのカウントが不本意に増加してしまう問題があったためです。
+        `button_to` を使用することで、ユーザーがボタンをクリックしたときのみリクエストが発生し、
+        クイズが正しく開始されるようにしました。
+      %>
+      <%= button_to '単語テスト -Word Quiz-', user_word_quizzes_path(user, word.id), method: :get, class: "quiz-link" %>
       <span class="language">たんごてすと</span>
     </li>
   <% else %> <!-- 単語が存在しない場合 -->

@@ -14,7 +14,7 @@
     <% end %>
   </ul>
   <div class="actions">
-  <%= link_to '次のクイズ', user_word_quizzes_path(@user, @word) %> | 
+  <%= button_to '次のクイズ', user_word_quizzes_path(@user, @word), method: :get, class: "quiz-link" %>
   <%= link_to 'ホームへ戻る', root_path %> |
   <%= link_to '途中でやめる', reset_session_path(@user), data: { turbo_method: :delete }, class: "btn btn-warning" %>
   </div>
