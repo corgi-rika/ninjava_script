@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_08_27_051432) do
+ActiveRecord::Schema[7.0].define(version: 2024_08_27_052954) do
   create_table "quizzes", charset: "utf8", force: :cascade do |t|
     t.bigint "word_id", null: false
     t.string "correct_answer"
@@ -21,6 +21,21 @@ ActiveRecord::Schema[7.0].define(version: 2024_08_27_051432) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["word_id"], name: "index_quizzes_on_word_id"
+  end
+
+  create_table "reports", charset: "utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.decimal "total_study_time", precision: 10
+    t.text "good_points"
+    t.text "improvement_points"
+    t.text "next_steps"
+    t.string "next_study_day"
+    t.text "feedback"
+    t.bigint "mentor_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["mentor_id"], name: "index_reports_on_mentor_id"
+    t.index ["user_id"], name: "index_reports_on_user_id"
   end
 
   create_table "users", charset: "utf8", force: :cascade do |t|
@@ -56,5 +71,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_08_27_051432) do
   end
 
   add_foreign_key "quizzes", "words"
+  add_foreign_key "reports", "users"
+  add_foreign_key "reports", "users", column: "mentor_id"
   add_foreign_key "words", "users"
 end
