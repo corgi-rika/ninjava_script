@@ -58,7 +58,6 @@ Things you may want to cover:
 | Column         | Type   | Options     |
 | -------------- | ------ | ----------- |
 | word_id        | integer | null: false, foreign_key: true |
-| question       | string | null: false |
 | correct_answer | string | null: false |
 | option1        | string | null: false |
 | option2        | string | null: false |
@@ -67,11 +66,27 @@ Things you may want to cover:
 
 - belongs_to :word
 
+### Reports テーブル
+
+| Column              | Type    | Options                   |
+| ------------------- | ------- | ------------------------- |
+| user_id             | integer | null: false, foreign_key: true |
+| total_study_time    | decimal | null: false               |
+| good_points         | text    | null: false               |
+| improvement_points  | text    | null: false               |
+| next_steps          | text    | null: false               |
+| next_study_day      | string  | null: false               |
+| feedback            | text    |                           |
+| mentor_id           | integer | foreign_key: true         |
+
+- belongs_to :user
+- belongs_to :mentor
+
 ### Feedbacks テーブル
 
-| Column    | Type   | Options     |
-| --------- | ------ | ----------- |
-| feedback  | text   | null: false |
+| Column    | Type    | Options     |
+| --------- | ------- | ----------- |
+| feedback  | text    | null: false |
 | user_id   | integer | null: false, foreign_key: true |
 | mentor_id | integer | null: false, foreign_key: true |
 
