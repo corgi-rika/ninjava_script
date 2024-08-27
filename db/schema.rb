@@ -10,10 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_08_21_075948) do
+ActiveRecord::Schema[7.0].define(version: 2024_08_27_051432) do
   create_table "quizzes", charset: "utf8", force: :cascade do |t|
     t.bigint "word_id", null: false
-    t.string "question"
     t.string "correct_answer"
     t.string "option1"
     t.string "option2"
