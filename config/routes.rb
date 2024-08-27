@@ -18,4 +18,7 @@ Rails.application.routes.draw do
   get 'mentor_registration', to: 'mentorships#new'
   post 'mentor_registration', to: 'mentorships#create'
 
+  # 日報用のルーティングを追加
+  resources :reports, only: [:index, :new, :create, :show, :destroy]
+
 end
