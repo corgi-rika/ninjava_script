@@ -2,12 +2,16 @@
 <div class="report-form-container">
   <h2>新しい日報を作成</h2>
 
-  <%= form_with model: @report, local: true do |form| %>
+  <%= render 'shared/error_messages', model: @report %>
+
+  <%= form_with model: @report, url: user_reports_path(current_user), local: true do |form| %>
     <!-- 今日の合計学習時間 -->
     <div class="report-field">
-      <%= form.label :total_study_time, '今日の合計学習時間は何時間ですか？<br>※24時間表記(例_07:00)'.html_safe  %>
+      <%= form.label :total_study_time, '今日の合計学習時間は何時間ですか？'.html_safe  %>
       <%= form.text_field :total_study_time, placeholder: "例: 07:00", class: "report-input" %>
+      <small>※24時間表記 (例_07:00)</small>
     </div>
+
 
     <!-- 今日の学習でうまくいったこと -->
     <div class="report-field">
@@ -35,8 +39,9 @@
 
     <!-- メンターへのコメントや質問 -->
     <div class="report-field">
-      <%= form.label :feedback, "メンターへのコメントや質問<br>※メンターがまだいない場合は不要です。".html_safe %>
-      <%= form.text_area :feedback, placeholder: "メンターへの質問やコメントを記入してください", class: "report-textarea" %>
+      <%= form.label :comment, "メンターへのコメントや質問" %>
+      <%= form.text_area :comment, placeholder: "メンターへの質問やコメントを記入してください", class: "report-textarea" %>
+      <small>※メンターがまだいない場合は不要です。</small>
     </div>
 
     <!-- 送信ボタン -->

@@ -18,7 +18,7 @@
       <span class="language"><%= "#{user.mentee.nickname}さんのたんごちょう" %></span>
     </li>
     <li>
-      <%= link_to '日報 -Progress Check-', '#' %>
+      <%= link_to '日報 -Progress Check-', user_reports_path(user.mentee) %>
       <span class="language">にっぽう</span>
     </li>
   <% else %>

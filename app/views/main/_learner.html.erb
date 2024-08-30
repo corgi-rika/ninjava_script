@@ -37,8 +37,12 @@
     </li>
   <% end %>
   <li>
-    <%= link_to '日報 -Progress Check-', '#' %>
-    <span class="language">にっぽう</span>
+    <%= link_to '日報作成 -Create Report-', new_user_report_path(user) %>
+    <span class="language">にっぽうさくせい</span>
+  </li>
+  <li>
+    <%= link_to '日報一覧 -Reports List-', user_reports_path(user) %>
+    <span class="language">にっぽういちらん</span>
   </li>
 <% unless user.mentor.present? %><!-- メンターが存在しない場合のみ表示 -->
     <li>

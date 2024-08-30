@@ -1,16 +1,108 @@
-/* 単語詳細ページ用スタイル */
-.word-detail {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+/* 全体のコンテナ */
+.report-detail-container {
+  background-color: #f5f5f5; /* 背景をやさしい色に設定 */
+  padding: 20px; /* 全体の余白を確保 */
+  border-radius: 10px; /* 角を丸くして柔らかい印象に */
+  max-width: 1000px; /* コンテナの最大幅を設定 */
+  margin: 0 auto; /* 中央揃え */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 影をつけて立体感を出す */
 }
 
-.word-detail p {
-  margin: 10px 0;
+/* 見出し */
+h1 {
+  font-size: 24px; /* フォントサイズを大きく */
+  font-weight: bold; /* 見出しを強調 */
+  color: #2f4f4f; /* ダークグリーンで色を調整 */
+  text-align: center; /* 中央揃え */
+  margin-bottom: 20px; /* 下に余白を追加 */
 }
 
-.actions {
-  margin-top: 20px;
+/* レポート詳細 */
+.report-detail {
+  margin-bottom: 20px; /* 下に余白を追加 */
+}
+
+.report-detail p {
+  font-size: 16px; /* フォントサイズを設定 */
+  color: #333; /* テキストカラーを落ち着いた色に */
+  line-height: 1.5; /* 行間を少し広めに */
+  margin-bottom: 10px; /* 各項目の下に余白を追加 */
+}
+
+.report-detail p strong {
+  color: #2f4f4f; /* 強調部分の色を設定 */
+}
+
+/* フィードバックフォーム */
+.feedback-form {
+  background-color: #a7c4a5; /* フィードバックフォームの背景色 */
+  padding: 20px; /* 内側の余白 */
+  border-radius: 10px; /* 角の丸み */
+  max-width: 100%; /* フォームの最大幅 */
+  margin: 0 auto; /* 中央揃え */
+}
+
+.feedback-form .form-control {
+  width: 100%; /* 親要素の幅に合わせる */
+  box-sizing: border-box; /* パディングとボーダーを含めた幅を計算 */
+  margin: 0 auto; /* 親要素内で中央に配置 */
+}
+
+/* フィードバックフォーム内の各フィールド */
+.feedback-form .form-group {
+  margin-bottom: 20px; /* フィールド同士の間に余白を追加 */
+}
+
+.feedback-form label {
+  font-weight: bold; /* ラベルを強調 */
+  color: #2f4f4f; /* ダークグリーンでラベルの色を調整 */
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* フィードバックのテキストエリア */
+.feedback-form textarea {
+  width: 100%; /* 横幅を全体に広げる */
+  height: 100px; /* 高さを調整 */
+  padding: 10px;
+  border: 1px solid #2f4f4f; /* テキストエリアの境界線の色 */
+  border-radius: 5px;
+  resize: none; /* リサイズを無効にする */
+
+}
+
+/* 送信ボタン */
+.feedback-form .btn {
+  background-color: #3b6978; /* ボタンの背景色を調整 */
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%; /* ボタンをフィードバック欄の横幅いっぱいにする */
+}
+
+.feedback-form .btn:hover {
+  background-color: #204051; /* ボタンのホバー時の色を調整 */
+}
+
+
+/* フィードバック表示部分のスタイル */
+.feedback-display {
+  background-color: #dff0d8; /* 薄いグリーンの背景色で目立たせる */
+  border-left: 5px solid #3c763d; /* 左側に強調用の緑のライン */
+  padding: 15px;
+  margin-top: 20px; /* 他の要素との間隔を確保 */
+  border-radius: 5px; /* 角を少し丸くする */
+}
+
+.feedback-header {
+  color: #3c763d; /* 見出しをフィードバックのラインと同じ色に */
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.feedback-content {
+  font-size: 16px; /* フィードバックのテキストを見やすいサイズに */
+  color: #3c763d; /* フィードバックのテキストも目立つように緑色に */
 }
