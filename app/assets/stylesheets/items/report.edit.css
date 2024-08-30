@@ -1,0 +1,50 @@
+.report-form-container {
+  background-color: #f0f8ff; /* 淡いブルーの背景色 */
+  padding: 20px; /* コンテナの内側の余白 */
+  border-radius: 10px; /* 角を丸くする */
+  max-width: 600px; /* フォームの最大幅 */
+  margin: 0 auto; /* 中央に配置 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 影をつけて立体感を出す */
+}
+
+.report-form-container h2 {
+  font-size: 24px; /* 見出しを大きく */
+  font-weight: bold; /* 太字にする */
+  color: #2f4f4f; /* ダークグリーンの文字色 */
+  text-align: center; /* 見出しを中央揃え */
+  margin-bottom: 20px; /* 見出し下部の余白 */
+}
+
+.form-group {
+  margin-bottom: 20px; /* フォームフィールドの間の余白 */
+}
+
+.form-group label {
+  font-weight: bold; /* ラベルを太字に */
+  color: #2f4f4f; /* ダークグリーンの文字色 */
+  display: block;
+  margin-bottom: 10px; /* ラベルの下部に余白 */
+}
+
+.form-control {
+  width: 100%; /* フォームコントロールをコンテナの幅いっぱいに */
+  padding: 10px; /* 内側の余白 */
+  border: 1px solid #ccc; /* 薄いグレーのボーダー */
+  border-radius: 5px; /* 角を丸くする */
+  box-sizing: border-box; /* パディングを含めた幅 */
+}
+
+.btn {
+  background-color: #28a745; /* 緑色のボタン */
+  color: #fff; /* 白色の文字 */
+  padding: 10px 20px; /* ボタン内の余白 */
+  border: none; /* ボーダーをなしに */
+  border-radius: 5px; /* 角を丸くする */
+  cursor: pointer; /* クリック可能に */
+  width: 100%; /* ボタンをコンテナの幅いっぱいに */
+  text-align: center; /* ボタン内のテキストを中央揃え */
+}
+
+.btn:hover {
+  background-color: #218838; /* ホバー時に少し暗くする */
+}

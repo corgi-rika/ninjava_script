@@ -12,6 +12,9 @@ class User < ApplicationRecord
   has_one :mentee, class_name: 'User', foreign_key: 'mentor_id', dependent: :nullify
   belongs_to :mentor, class_name: 'User', optional: true
 
+  # 学習者が作成した日報を関連付け
+  has_many :reports, dependent: :destroy
+
   # roleのバリデーション
   validates :role, presence: true
 

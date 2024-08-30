@@ -1,0 +1,106 @@
+/* 全体のコンテナ */
+.report-detail-container {
+  background-color: #f9f9f9; /* 背景色を薄いグレーに設定 */
+  padding: 20px; /* コンテナ全体に余白を追加 */
+  border-radius: 8px; /* 角を少し丸める */
+  margin: 20px auto; /* 上下中央揃え */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* 軽い影をつけて立体感を出す */
+  min-width: 500px;
+}
+
+/* 見出し */
+.report-detail-container h1 {
+  font-size: 24px; /* フォントサイズを大きく */
+  color: #2c3e50; /* テキストカラーを濃いグレーに */
+  text-align: center; /* テキストを中央揃え */
+  margin-bottom: 20px; /* 見出しの下に余白を追加 */
+}
+
+/* レポート詳細 */
+.report-detail {
+  margin-bottom: 20px; /* 全体の下部に余白を追加 */
+  font-size: 18px; /* レポートの詳細テキストサイズを大きく */
+}
+
+.report-detail p {
+  font-size: 16px; /* テキストのサイズを適度に */
+  color: #34495e; /* テキストカラーをダークグレーに設定 */
+  line-height: 1.6; /* 行間を広めに */
+  margin-bottom: 15px; /* 各段落の下に余白を追加 */
+}
+
+.report-detail p strong {
+  color: #2980b9; /* 強調部分の色をブルーに設定 */
+}
+
+/* 学習者用アクション */
+.report-actions {
+  text-align: center; /* ボタンを中央揃え */
+  margin-top: 20px; /* 上部に余白を追加 */
+}
+
+.report-actions .btn {
+  background-color: #14997a; /* ボタン背景色を赤に設定 */
+  color: #fff; /* テキストを白に */
+  padding: 10px 20px; /* ボタンに余白を追加 */
+  border: none; /* ボーダーを削除 */
+  border-radius: 5px; /* 角を丸く */
+  cursor: pointer; /* カーソルをポインターに変更 */
+}
+
+.report-actions .btn:hover {
+  background-color: #076319; /* ホバー時の色を少し暗く */
+}
+
+/* メンター用フィードバックフォーム */
+.feedback-form {
+  background-color: #ecf0f1; /* フィードバックフォームの背景色を明るいグレーに */
+  padding: 20px; /* フォーム全体に余白を追加 */
+  border-radius: 8px; /* 角を少し丸める */
+  margin-top: 20px; /* 上部に余白を追加 */
+  max-width: 100%; /* フォーム全体をコンテナに合わせる */
+}
+
+.feedback-form h3 {
+  font-size: 20px; /* フォントサイズを少し大きめに */
+  color: #16a085; /* テキストカラーをグリーンに */
+  margin-bottom: 15px; /* 見出しの下に余白を追加 */
+}
+
+.feedback-form .form-group {
+  margin-bottom: 15px; /* 各フィールドの下に余白を追加 */
+}
+
+.feedback-form label {
+  display: block; /* ラベルをブロック表示に */
+  font-weight: bold; /* 太字に */
+  color: #2c3e50; /* テキストカラーを濃いグレーに */
+  margin-bottom: 10px; /* ラベルの下に余白を追加 */
+}
+
+.feedback-form .form-control {
+  width: 100%; /* 幅を全体に広げる */
+  padding: 10px; /* テキストエリア内に余白を追加 */
+  border: 1px solid #bdc3c7; /* ボーダーの色をグレーに */
+  border-radius: 5px; /* 角を丸く */
+  box-sizing: border-box; /* ボックスのサイズを含める */
+}
+
+.feedback-form .btn {
+  background-color: #27ae60; /* ボタンの背景色をグリーンに設定 */
+  color: #fff; /* テキストを白に */
+  padding: 10px 24px; /* ボタンに余白を追加 */
+  border: none; /* ボーダーを削除 */
+  border-radius: 5px; /* 角を丸く */
+  cursor: pointer; /* カーソルをポインターに変更 */
+  width: 100%; /* ボタンを全体に広げる */
+}
+
+.feedback-form .btn:hover {
+  background-color: #229954; /* ホバー時の色を少し暗く */
+}
+
+.feedback-form .btn-danger {
+  background-color: #e74c3c; /* 削除ボタンの背景色を赤に */
+  margin-top: 10px; /* 上に余白を追加 */
+}

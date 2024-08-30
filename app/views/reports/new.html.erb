@@ -1,0 +1,52 @@
+<!-- app/views/reports/new.html.erb -->
+<div class="report-form-container">
+  <h2>新しい日報を作成</h2>
+
+  <%= render 'shared/error_messages', model: @report %>
+
+  <%= form_with model: @report, url: user_reports_path(current_user), local: true do |form| %>
+    <!-- 今日の合計学習時間 -->
+    <div class="report-field">
+      <%= form.label :total_study_time, '今日の合計学習時間は何時間ですか？'.html_safe  %>
+      <%= form.text_field :total_study_time, placeholder: "例: 07:00", class: "report-input" %>
+      <small>※24時間表記 (例_07:00)</small>
+    </div>
+
+
+    <!-- 今日の学習でうまくいったこと -->
+    <div class="report-field">
+      <%= form.label :good_points, '今日の学習でうまくいったことはなんですか？ (例: 新しい単語をスムーズに覚えられた)' %>
+      <%= form.text_area :good_points, placeholder: "例: 新しい単語をスムーズに覚えられた", class: "report-textarea" %>
+    </div>
+
+    <!-- 今日の学習でうまくいかなかったこと -->
+    <div class="report-field">
+      <%= form.label :improvement_points, '今日の学習でうまくいかなかったことはなんですか？ (例: 集中力がいつもより続かなかった)' %>
+      <%= form.text_area :improvement_points, placeholder: "例: 集中力がいつもより続かなかった", class: "report-textarea" %>
+    </div>
+
+    <!-- 改善のアイデア -->
+    <div class="report-field">
+      <%= form.label :next_steps, '改善のアイデアを考えてみましょう。 (例: 学習中はスマートフォンの電源を切る)' %>
+      <%= form.text_area :next_steps, placeholder: "例: 学習中はスマートフォンの電源を切る", class: "report-textarea" %>
+    </div>
+
+    <!-- 次回の学習計画 -->
+    <div class="report-field">
+      <%= form.label :next_study_day, '次回の学習計画を教えてください。 (例: 明日1時間は習ったことの復習をする)' %>
+      <%= form.text_field :next_study_day, placeholder: "例: 明日1時間は習ったことの復習をする", class: "report-input" %>
+    </div>
+
+    <!-- メンターへのコメントや質問 -->
+    <div class="report-field">
+      <%= form.label :comment, "メンターへのコメントや質問" %>
+      <%= form.text_area :comment, placeholder: "メンターへの質問やコメントを記入してください", class: "report-textarea" %>
+      <small>※メンターがまだいない場合は不要です。</small>
+    </div>
+
+    <!-- 送信ボタン -->
+    <div class="report-actions">
+      <%= form.submit '日報を送信', class: 'btn btn-primary' %>
+    </div>
+  <% end %>
+</div>

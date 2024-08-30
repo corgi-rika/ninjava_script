@@ -5,8 +5,11 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show] do
     resources :words do
-    resources :quizzes, only: [:index, :create, :show] # クイズ用のルーティングを追加
+      resources :quizzes, only: [:index, :create, :show] # クイズ用のルーティングを追加
     end
+
+    # 日報用のルーティングを追加
+    resources :reports
   end
 
   # 結果ページへのルート
@@ -17,5 +20,4 @@ Rails.application.routes.draw do
   # メンター登録用のルートを追加
   get 'mentor_registration', to: 'mentorships#new'
   post 'mentor_registration', to: 'mentorships#create'
-
 end
