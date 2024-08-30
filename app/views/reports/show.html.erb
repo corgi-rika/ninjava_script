@@ -2,6 +2,8 @@
 <div class="report-detail-container">
   <h1>日報詳細</h1>
   
+  <%= render 'shared/error_messages', model: @report %>
+
   <div class="report-detail">
     <p><strong>学習日報:</strong> <%= @report.created_at.strftime('%Y-%m-%d') %></p>
     <p><strong>合計学習時間:</strong> <%= @report.total_study_time %> 時間</p>
@@ -23,7 +25,7 @@
           <% end %>
           
       </div>
-    <% else %>
+    <% elsif current_user.role == 1 %>
       <div class="feedback-form">
         <%= form_with model: @report, url: user_report_path(current_user, @report), method: :patch, local: true do |form| %>
           <div class="form-group">
