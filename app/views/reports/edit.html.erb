@@ -2,6 +2,8 @@
 <div class="report-form-container">
   <h2>フィードバックを編集する</h2>
 
+  <%= render 'shared/error_messages', model: @report %>
+
   <%= form_with model: @report, url: user_report_path(current_user, @report), method: :patch, local: true do |form| %>
     <div class="form-group">
       <%= form.label :feedback, "フィードバック" %>

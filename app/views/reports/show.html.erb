@@ -2,6 +2,8 @@
 <div class="report-detail-container">
   <h1>日報詳細</h1>
   
+  <%= render 'shared/error_messages', model: @report %>
+
   <div class="report-detail">
     <p><strong>学習日報:</strong> <%= @report.created_at.strftime('%Y-%m-%d') %></p>
     <p><strong>合計学習時間:</strong> <%= @report.total_study_time %> 時間</p>

@@ -34,18 +34,31 @@ class ReportsController < ApplicationController
     if @report.save
       redirect_to user_reports_path(@user), notice: "日報を作成しました"
     else
-      render :new, status: :unprocessable_entity
+      render :show, status: :unprocessable_entity
     end
   end
 
+  def edit
+  # `set_report` により対象の日報が @report にセットされている
+  end
+
   def update
-    # フィードバックが追加または更新されるとき、既存の日報レコードを更新する。
-    if @report.update(report_params)
-      redirect_to user_report_path(@user, @report), notice: "フィードバックが更新されました。"
+    # フィードバックが存在するかどうかでメッセージを分岐
+    if @report.feedback.nil?
+      if @report.update(report_params)
+        redirect_to user_report_path(@user, @report), notice: "フィードバックが作成されました。"
+      else
+        render :show, status: :unprocessable_entity
+      end
     else
-      render :show
+      if @report.update(report_params)
+        redirect_to user_report_path(@user, @report), notice: "フィードバックが更新されました。"
+      else
+        render :edit, status: :unprocessable_entity
+      end
     end
   end
+
 
 
   def destroy
