@@ -2,10 +2,14 @@ class ReportsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_user
   # `show`, `edit`, `update`, `destroy` アクションの前に特定の日報をセット
-  before_action :set_report, only: [:show, :edit, :update, :destroy]
+  before_action :set_report, only: [:show, :edit, :update, :destroy, :edit]
 
   def index
-    @reports = @user.reports
+    if @user.mentee.present?
+      @reports = @user.mentee.reports
+    else
+      @reports = @user.reports
+    end
 
     # 日付フィルタリング
     if params[:start_date].present? && params[:end_date].present?
@@ -28,15 +32,30 @@ class ReportsController < ApplicationController
   def create
     @report = @user.reports.new(report_params)
     if @report.save
-      redirect_to reports_path, notice: "日報を作成しました"
+      redirect_to user_reports_path(@user), notice: "日報を作成しました"
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
+  def update
+    # フィードバックが追加または更新されるとき、既存の日報レコードを更新する。
+    if @report.update(report_params)
+      redirect_to user_report_path(@user, @report), notice: "フィードバックが更新されました。"
+    else
+      render :show
+    end
+  end
+
+
   def destroy
-    @report.destroy
-    redirect_to reports_path, notice: "日報を削除しました。"
+    if current_user.role == 1  # メンターの場合
+      @report.update(feedback: nil)
+      redirect_to user_report_path(@user, @report), notice: "フィードバックが削除されました。"
+    else # 学習者の場合は日報全体を削除
+      @report.destroy
+      redirect_to user_reports_path(@user), notice: "日報を削除しました。"
+    end
   end
 
   private
@@ -46,12 +65,15 @@ class ReportsController < ApplicationController
   end
 
   def set_report
-    #ログインユーザーが作成した日報のみを検索
-    @report = @user.reports.find(params[:id])
+    if current_user.role == 0  # 学習者の場合
+      @report = current_user.reports.find(params[:id])
+    elsif current_user.role == 1  # メンターの場合
+      @report = current_user.mentee.reports.find(params[:id])
+    end
   end
 
   def report_params
-    params.require(:report).permit(:total_study_time, :good_points, :improvement_points, :next_steps, :next_study_day, :feedback)
+    params.require(:report).permit(:total_study_time, :good_points, :improvement_points, :next_steps, :next_study_day, :feedback, :comment)
   end
 
 end
