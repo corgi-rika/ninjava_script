@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     end
 
     # 日報用のルーティングを追加
-    resources :reports, only: [:index, :new, :create, :show, :destroy]
+    resources :reports
   end
 
   # 結果ページへのルート
