@@ -23,7 +23,7 @@
           <% end %>
           
       </div>
-    <% else %>
+    <% elsif current_user.role == 1 %>
       <div class="feedback-form">
         <%= form_with model: @report, url: user_report_path(current_user, @report), method: :patch, local: true do |form| %>
           <div class="form-group">
