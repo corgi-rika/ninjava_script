@@ -8,5 +8,5 @@ class Report < ApplicationRecord
     validates :next_steps
     validates :next_study_day
   end
-
+  validates :feedback, presence: true, unless: -> { feedback.nil? }
 end
