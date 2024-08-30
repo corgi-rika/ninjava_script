@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_08_27_052954) do
+ActiveRecord::Schema[7.0].define(version: 2024_08_27_135444) do
   create_table "quizzes", charset: "utf8", force: :cascade do |t|
     t.bigint "word_id", null: false
     t.string "correct_answer"
@@ -34,6 +34,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_08_27_052954) do
     t.bigint "mentor_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "comment"
     t.index ["mentor_id"], name: "index_reports_on_mentor_id"
     t.index ["user_id"], name: "index_reports_on_user_id"
   end
