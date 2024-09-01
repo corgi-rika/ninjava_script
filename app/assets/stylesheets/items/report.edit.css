@@ -34,17 +34,12 @@
   box-sizing: border-box; /* パディングを含めた幅 */
 }
 
-.btn {
-  background-color: #28a745; /* 緑色のボタン */
-  color: #fff; /* 白色の文字 */
-  padding: 10px 20px; /* ボタン内の余白 */
-  border: none; /* ボーダーをなしに */
-  border-radius: 5px; /* 角を丸くする */
-  cursor: pointer; /* クリック可能に */
-  width: 100%; /* ボタンをコンテナの幅いっぱいに */
-  text-align: center; /* ボタン内のテキストを中央揃え */
-}
+
 
 .btn:hover {
   background-color: #218838; /* ホバー時に少し暗くする */
+}
+
+.btn-primary:hover{
+  color: white;
 }
