@@ -34,7 +34,7 @@ class ReportsController < ApplicationController
     if @report.save
       redirect_to user_reports_path(@user), notice: "日報を作成しました"
     else
-      render :show, status: :unprocessable_entity
+      render :new, status: :unprocessable_entity
     end
   end
 
