@@ -1,19 +1,18 @@
-# NinJavaScript
+# README
+
+# NinjavaScript
 
 ## アプリケーション概要
-- 日本語学習と先生をサポートする学習支援アプリです。クイズ形式で単語を覚えたり、学習の進捗を管理したりすることができます。
+- 日本語学習と先生をサポートする学習支援アプリです。4択クイズ形式で単語を覚えたり、学習の進捗を管理したりすることができます。
 
 ## URL
-- [https://ninjava-script.onrender.com]
+- [https://ninjava-script.onrender.com](https://ninjava-script.onrender.com)
 
 ## テスト用アカウント
-### 学習者用
-- メール：learner@test.com
-- パスワード：learner1234
-
-### メンター用
-- メール：mentor@test.com
-- パスワード：mentor1234
+| ユーザータイプ | メール                | パスワード     |
+| -------------- | --------------------- | -------------- |
+| 学習者用       | learner@test.com      | learner1234    |
+| メンター用     | mentor@test.com       | mentor1234     |
 
 ## 利用方法
 ### 学習者用
@@ -23,6 +22,7 @@
 
 ### メンター用
 1. メンターとして登録すると、学習者の進捗を確認し、フィードバックを送信できます。
+2. メンター登録時に一意のコードが発行されます。このコードを学習者に渡し、学習者がそのコードを入力することで紐づけが完了します。
 
 ## 機能一覧
 | 機能                       | 学習者用ユーザー | メンター用ユーザー | 
@@ -36,10 +36,6 @@
 
 ## アプリケーションを作成した背景
 - 日本語を学ぶ夫のために、効率的な学習サポートを提供するアプリを開発したいと考えました。夫が使用していた無料の日本語学習アプリには不自然な例文や、学んだ単語を復習する機能が不足していたため、それを補うためのアプリを開発しました。
-
-## 今後の展望
-- クイズ結果のデータ分析機能を追加し、ユーザーの弱点を把握しやすくする。
-- メンターと学習者間でのコミュニケーション機能を強化する。
 
 ## 開発環境
 - フロントエンド: HTML, CSS, JavaScript
@@ -58,35 +54,6 @@ rails db:create db:migrate
 rails s
 
 
-
-
-
-
-
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
 ## Users テーブル
 
 | Column             | Type   | Options                   |
