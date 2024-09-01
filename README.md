@@ -82,13 +82,3 @@ Things you may want to cover:
 - belongs_to :user
 - belongs_to :mentor
 
-### Feedbacks テーブル
-
-| Column    | Type    | Options     |
-| --------- | ------- | ----------- |
-| feedback  | text    | null: false |
-| user_id   | integer | null: false, foreign_key: true |
-| mentor_id | integer | null: false, foreign_key: true |
-
-- belongs_to :user
-- belongs_to :mentor

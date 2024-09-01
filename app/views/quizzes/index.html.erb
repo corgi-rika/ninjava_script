@@ -1,3 +1,4 @@
+
 <div class="quiz-container">
   <h2 class="quiz-title"><%= "#{@user.nickname}さんの単語テスト" %></h2>
   <p class="quiz-status">10回中<%= session[:quiz_count] %>回目のクイズです。</p>
@@ -9,16 +10,17 @@
   <ul class="quiz-options">
     <% @options.each do |option| %>
       <li>
-        <a href="#" class="quiz-button" data-answer="<%= option %>" data-correct="<%= @quiz.correct_answer %>" data-url="<%= user_word_quiz_path(@user, @word, @quiz, answer: option) %>">
+        <a href="#" class="quiz-button custom-quiz-button" data-answer="<%= option %>" data-correct="<%= @quiz.correct_answer %>" data-url="<%= user_word_quiz_path(@user, @word, @quiz, answer: option) %>">
           <%= option %>
         </a>
       </li>
     <% end %>
   </ul>
+
   
   <div class="actions">
-  <%= button_to '次のクイズ', user_word_quizzes_path(@user, @word), method: :get, class: "quiz-link" %>
+  <%= button_to '次のクイズ', user_word_quizzes_path(@user, @word), method: :get, class: "quiz-link" %> |
   <%= link_to 'ホームへ戻る', root_path %> |
-  <%= link_to '途中でやめる', reset_session_path(@user), data: { turbo_method: :delete }, class: "btn btn-warning" %>
+  <%= link_to '途中でやめる', reset_session_path(@user), data: { turbo_method: :delete }, class: "btn-warning" %>
   </div>
 </div>

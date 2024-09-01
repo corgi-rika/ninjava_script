@@ -28,7 +28,7 @@
         `button_to` を使用することで、ユーザーがボタンをクリックしたときのみリクエストが発生し、
         クイズが正しく開始されるようにしました。
       %>
-      <%= button_to '単語テスト -Word Quiz-', user_word_quizzes_path(user, word.id), method: :get, class: "quiz-link" %>
+      <%= button_to '単語テスト -Word Quiz-', user_word_quizzes_path(user, word.id), method: :get, class: "word-quiz-link" %>
       <span class="language">たんごてすと</span>
     </li>
   <% else %> <!-- 単語が存在しない場合 -->

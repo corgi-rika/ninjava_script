@@ -54,6 +54,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
 }
 
 .actions a {
@@ -76,9 +77,25 @@
   margin-top: 50px;
 }
 
-.actions {
-  margin-top: 20px;
+/* ４択クイズのボタンのスタイルをリンクと統一するためのスタイル */
+/* ボタンをリンクと同じ見た目にするためのスタイル */
+/* 他の部分に影響しないように、buttonだけのスタイルを追加 */
+button.quiz-link {
+  background: none; /* 背景をリセット */
+  color: #007bff;
+  border: none; /* ボーダーをリセット */
+  font: inherit; /* 親要素のフォントを継承 */
+  padding: 0;
+  cursor: pointer; /* ポインターに変更 */
+  display: block; /* 他のリンクと同じくブロック要素に */
+  text-align: center; /* テキストを中央寄せ */
+  margin: 0 10px;
 }
+
+button.quiz-link:hover {
+  color: #2980b9; /* ホバー時のテキストカラー */
+}
+
 
 
 

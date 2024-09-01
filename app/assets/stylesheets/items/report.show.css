@@ -100,7 +100,4 @@
   background-color: #229954; /* ホバー時の色を少し暗く */
 }
 
-.feedback-form .btn-danger {
-  background-color: #e74c3c; /* 削除ボタンの背景色を赤に */
-  margin-top: 10px; /* 上に余白を追加 */
-}
+
