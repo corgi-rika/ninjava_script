@@ -5,6 +5,7 @@
   <table>
     <thead>
       <tr>
+        <th>番号</th>
         <th>単語</th>
         <th>意味</th>
         <th>意味（ひらがな）</th> 
@@ -12,9 +13,10 @@
       </tr>
     </thead>
     <tbody>
-      <% @words.each do |word| %>
+      <% @words.each_with_index do |word, index| %>
         <%# TODO: 後でJavaScriptを使用して、行全体をクリック可能にする %>
         <tr>
+          <td><%= index + 1 %></td> <!-- 番号を表示 -->
           <td><%= link_to word.word, user_word_path(@user, word) %></td>
           <td><%= link_to word.meaning, user_word_path(@user,word) %></td>
           <td><%= link_to word.hiragana.present? ? word.hiragana : "", user_word_path(@user, word) %></td> <!-- ひらがな情報がない場合は空欄を表示 -->
