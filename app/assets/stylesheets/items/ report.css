@@ -60,3 +60,13 @@
 .report-actions input[type="submit"]:hover {
   background-color: #3498db;
 }
+
+.report-edit{
+  background-color: #3b6978;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+}
