@@ -8,14 +8,6 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 影をつけて立体感を出す */
 }
 
-/* 見出し */
-h1 {
-  font-size: 24px; /* フォントサイズを大きく */
-  font-weight: bold; /* 見出しを強調 */
-  color: #2f4f4f; /* ダークグリーンで色を調整 */
-  text-align: center; /* 中央揃え */
-  margin-bottom: 20px; /* 下に余白を追加 */
-}
 
 /* レポート詳細 */
 .report-detail {
@@ -101,7 +93,7 @@ h1 {
   margin-bottom: 10px;
 }
 
-.feedback-content {
+.feedback-content p {
   font-size: 16px; /* フィードバックのテキストを見やすいサイズに */
   color: #3c763d; /* フィードバックのテキストも目立つように緑色に */
 }

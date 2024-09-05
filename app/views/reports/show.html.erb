@@ -20,10 +20,11 @@
         <h3 class="feedback-header">メンターからのフィードバック</h3>
         <p class="feedback-content"><%= @report.feedback %></p>
           <% if current_user.role == 1 %>
-          <%= link_to 'フィードバックを編集', edit_user_report_path(current_user, @report), class: 'btn btn-primary' %>
-          <%= link_to 'フィードバックを削除', user_report_path(current_user, @report), data: { turbo_method: :delete }, class: 'btn btn-primary' %>
+          <div class="report-actions">
+          <%= link_to 'フィードバックを編集', edit_user_report_path(current_user, @report), class: 'btn ' %>
+          <%= link_to 'フィードバックを削除', user_report_path(current_user, @report), data: { turbo_method: :delete }, class: 'btn btn-info' %>
+          </div>
           <% end %>
-          
       </div>
     <% elsif current_user.role == 1 %>
       <div class="feedback-form">
