@@ -1,0 +1,5 @@
+.word-detail table th:first-child, /* ヘッダーの番号列 */
+  .word-detail table td:first-child{/* データの番号列 */ 
+  text-align: center;
+  width:40px;
+}
