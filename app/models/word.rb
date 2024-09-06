@@ -8,4 +8,13 @@ class Word < ApplicationRecord
 
   # 新しく追加されたひらがなカラムに対するバリデーション
   validates :hiragana, length: { maximum: 10 }, allow_blank: true
+
+  # 検索メソッドを定義
+  def self.search(keyword)
+    if keyword.present?
+      where('word LIKE ? OR meaning LIKE ?', "%#{keyword}%", "%#{keyword}%")
+    else
+      all
+    end
+  end
 end

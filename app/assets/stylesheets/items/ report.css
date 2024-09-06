@@ -70,3 +70,12 @@
   cursor: pointer;
   width: 100%;
 }
+
+.report-field .required-label {
+  background-color: #3498db; /* 緑色の背景 */
+  color: #fff; /* 白文字 */
+  padding: 2px 4px; /* ラベルの内側余白 */
+  border-radius: 3px; /* 角を丸く */
+  font-size: 0.8em; /* 少し小さく */
+  margin-left: 10px; /* ラベルとスペースを空ける */
+}

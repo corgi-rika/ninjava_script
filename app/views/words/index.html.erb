@@ -2,6 +2,12 @@
 
   <h1><%="#{@user.nickname}さんの単語一覧"%></h1>
 
+  <div class="search-bar">
+    <%= form_with(url: search_user_words_path(@user), method: :get, local: true, class: "search-form") do |form| %>
+    <%= form.text_field :keyword, placeholder: "単語を検索する", class: "search-input" %>
+    <%= form.submit "検索", class: "search-btn" %>
+    <% end %>
+  </div>
   <table>
     <thead>
       <tr>

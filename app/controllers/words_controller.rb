@@ -42,6 +42,11 @@ class WordsController < ApplicationController
     redirect_to user_words_path(@user), notice: '単語が削除されました。'
   end
 
+  def search
+    # モデルのsearchメソッドを呼び出し、検索結果を取得
+    @words = @user.words.search(params[:keyword])
+  end
+
   private
 
   def set_user

@@ -1,0 +1,29 @@
+.search-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-input:focus {
+  border-color:#14997a /* フォーカス時の枠線の色 */
+
+}
+
+.search-input {
+  width: 300px;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #ddd;
+  border-radius: 4px 0 0 4px;
+  outline: none;
+}
+
+.search-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #14997a;
+  color: white;
+  border: none;
+  border-radius:  4px 4px ;
+  cursor: pointer;
+}

@@ -9,6 +9,7 @@ body {
   flex-direction: column;
   justify-content: center; /* 縦方向の中央揃え */
   align-items: center;/* 横方向の中央揃え */
+  background-color: #f5f5f5;
 } 
 
 
@@ -24,7 +25,7 @@ body {
   display: flex;
   justify-content: space-between; /* 左右に要素を配置 */
   align-items: center;
-  
+
   width: 100%; /* ヘッダーをページ幅いっぱいに広げる */
   padding: 10px 20px; /* 上下左右の余白を設定 */
   box-sizing: border-box; /* パディング込みの幅を設定 */

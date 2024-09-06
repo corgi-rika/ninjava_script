@@ -8,6 +8,7 @@
     <!-- 今日の合計学習時間 -->
     <div class="report-field">
       <%= form.label :total_study_time, '今日の合計学習時間は何時間ですか？'.html_safe  %>
+      <span class="required-label">必須</span><br />
       <%= form.text_field :total_study_time, placeholder: "例: 07:00", class: "report-input" %>
       <small>※24時間表記 (例_07:00)</small>
     </div>
@@ -16,24 +17,28 @@
     <!-- 今日の学習でうまくいったこと -->
     <div class="report-field">
       <%= form.label :good_points, '今日の学習でうまくいったことはなんですか？ (例: 新しい単語をスムーズに覚えられた)' %>
+      <span class="required-label">必須</span><br />
       <%= form.text_area :good_points, placeholder: "例: 新しい単語をスムーズに覚えられた", class: "report-textarea" %>
     </div>
 
     <!-- 今日の学習でうまくいかなかったこと -->
     <div class="report-field">
       <%= form.label :improvement_points, '今日の学習でうまくいかなかったことはなんですか？ (例: 集中力がいつもより続かなかった)' %>
+      <span class="required-label">必須</span><br />
       <%= form.text_area :improvement_points, placeholder: "例: 集中力がいつもより続かなかった", class: "report-textarea" %>
     </div>
 
     <!-- 改善のアイデア -->
     <div class="report-field">
       <%= form.label :next_steps, '改善のアイデアを考えてみましょう。 (例: 学習中はスマートフォンの電源を切る)' %>
+      <span class="required-label">必須</span><br />
       <%= form.text_area :next_steps, placeholder: "例: 学習中はスマートフォンの電源を切る", class: "report-textarea" %>
     </div>
 
     <!-- 次回の学習計画 -->
     <div class="report-field">
       <%= form.label :next_study_day, '次回の学習計画を教えてください。 (例: 明日1時間は習ったことの復習をする)' %>
+      <span class="required-label">必須</span><br />
       <%= form.text_field :next_study_day, placeholder: "例: 明日1時間は習ったことの復習をする", class: "report-input" %>
     </div>
 
