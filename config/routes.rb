@@ -5,6 +5,9 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show] do
     resources :words do
+      collection do
+        get 'search' # 検索用のルートを追加
+      end
       resources :quizzes, only: [:index, :create, :show] # クイズ用のルーティングを追加
     end
 

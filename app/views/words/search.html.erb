@@ -1,0 +1,49 @@
+<%# /Users/admin/projects/ninjava_script/app/views/words/serch.html.erb %>
+<div class="word-detail">
+  <h1>検索結果</h1>
+
+  <!-- 検索フォーム -->
+  <div class="search-bar">
+    <%= form_with(url: search_user_words_path(@user), method: :get, local: true, class: "search-form") do |form| %>
+      <%= form.text_field :keyword, placeholder: "単語や意味を検索する", class: "search-input" %>
+      <%= form.submit "検索", class: "search-btn" %>
+    <% end %>
+  </div>
+
+  <!-- 検索結果の表示 -->
+  <% if @words.any? %>
+    <!-- 検索結果が存在する場合はテーブルで表示 -->
+    <table>
+      <thead>
+        <tr>
+          <%# <th>番号</th> %>
+          <th>単語</th>
+          <th>意味</th>
+          <th>意味（ひらがな）</th>
+          <th>例文</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @words.each_with_index do |word, index| %>
+          <tr>
+            <%# ページネーション追加後に追加 %>
+            <%# <td><%= link_to (index + 1 + ((params[:page] || 1).to_i - 1) * @words.limit_value), user_word_path(@user, word) %>
+            <td><%= word.word %></td>
+            <td><%= word.meaning %></td>
+            <td><%= word.hiragana %></td>
+            <td><%= word.example %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% else %>
+    <!-- 検索結果がない場合のメッセージ -->
+    <p>該当する単語が見つかりませんでした。</p>
+  <% end %>
+
+
+<!-- 戻るボタン -->
+<div class="actions">
+  <%= link_to '戻る', user_words_path(@user) %>
+</div>
+</div>
