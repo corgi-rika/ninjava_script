@@ -41,6 +41,10 @@
     <p>該当する単語が見つかりませんでした。</p>
   <% end %>
 
+  <div class="pagination">
+    <!-- ページネーション -->
+    <%= paginate @words %>
+  </div>
 
 <!-- 戻るボタン -->
 <div class="actions">

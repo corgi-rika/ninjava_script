@@ -5,7 +5,7 @@ class WordsController < ApplicationController
 
 
   def index
-    @words = @user.words.order(created_at: :desc)# 学習者が登録した単語を取得する処理
+    @words = @user.words.order(created_at: :desc).page(params[:page]).per(10)# 1ページあたり10件の単語を表示
   end
 
   def show
@@ -44,7 +44,7 @@ class WordsController < ApplicationController
 
   def search
     # モデルのsearchメソッドを呼び出し、検索結果を取得
-    @words = @user.words.search(params[:keyword])
+    @words = @user.words.search(params[:keyword]).page(params[:page]).per(10)
   end
 
   private
