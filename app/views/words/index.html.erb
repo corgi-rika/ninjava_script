@@ -33,6 +33,11 @@
     </tbody>
   </table>
 
+  <div class="pagination">
+    <!-- ページネーション -->
+    <%= paginate @words %>
+  </div>
+
   <div class="actions">
     <%= link_to '戻る', root_path %>
   </div>
