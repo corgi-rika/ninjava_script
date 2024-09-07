@@ -7,6 +7,9 @@
     <%= form.text_field :keyword, placeholder: "単語を検索する", class: "search-input" %>
     <%= form.submit "検索", class: "search-btn" %>
     <% end %>
+
+    <!-- 新しい単語を追加するリンクを検索バーの右隣に配置 -->
+    <%= link_to '単語を追加する', new_user_word_path(@user), class: 'add-word-link' %>
   </div>
   <table>
     <thead>

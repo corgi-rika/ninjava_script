@@ -3,3 +3,23 @@
   text-align: center;
   width:40px;
 }
+
+
+.search-bar {
+  display: flex;
+  align-items: center;
+}
+
+.add-word-link {
+  margin-left: 30px;
+  padding: 10px;
+  background-color: #3ca463;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.add-word-link:hover {
+  color: white;
+  background-color: #14997a;
+}

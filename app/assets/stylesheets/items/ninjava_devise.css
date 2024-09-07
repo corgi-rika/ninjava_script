@@ -115,6 +115,6 @@ body {
   color: #fff; /* 白文字 */
   padding: 2px 4px; /* ラベルの内側余白 */
   border-radius: 3px; /* 角を丸く */
-  font-size: 0.8em; /* 少し小さく */
+  font-size: 0.6em; /* 少し小さく */
   margin-left: 10px; /* ラベルとスペースを空ける */
 }
