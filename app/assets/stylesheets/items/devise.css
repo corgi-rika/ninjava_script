@@ -25,11 +25,10 @@ body {
   display: flex;
   justify-content: space-between; /* 左右に要素を配置 */
   align-items: center;
-
   width: 100%; /* ヘッダーをページ幅いっぱいに広げる */
   padding: 10px 20px; /* 上下左右の余白を設定 */
   box-sizing: border-box; /* パディング込みの幅を設定 */
-  position: absolute; /* ヘッダーをページの最上部に固定 */
+  position: relative;
   top: 0; /* 上部から0px */
   left: 0; /* 左端から0px */
 }
@@ -55,7 +54,7 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-right: 90px;
+  margin-right: 20px;
 }
 .logout-link {
   font-size: 14px;
@@ -65,11 +64,11 @@ body {
 @media (max-width: 768px) {
   .logo-header {
     flex-direction: column; /* ロゴとログアウトボタンを縦に並べる */
-    align-items: center; /* 中央寄せ */
+    justify-content: center; 
   }
 
   #dog_logo {
-    width: 50px; /* ロゴのサイズを縮小 */
+    width: 70px; /* ロゴのサイズを縮小 */
   }
 
   .name_and_logout {
