@@ -25,14 +25,14 @@ body {
   display: flex;
   justify-content: space-between; /* 左右に要素を配置 */
   align-items: center;
-
   width: 100%; /* ヘッダーをページ幅いっぱいに広げる */
   padding: 10px 20px; /* 上下左右の余白を設定 */
   box-sizing: border-box; /* パディング込みの幅を設定 */
-  position: absolute; /* ヘッダーをページの最上部に固定 */
+  position: relative;
   top: 0; /* 上部から0px */
   left: 0; /* 左端から0px */
 }
+
 /* ロゴとタイトルのスタイル */
 .logo_container{
   display: flex;
@@ -54,32 +54,49 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-right: 90px;
+  margin-right: 20px;
 }
 .logout-link {
   font-size: 14px;
 }
 
+/* スマホ対応のスタイル調整 */
+@media (max-width: 768px) {
+  .logo-header {
+    flex-direction: column; /* ロゴとログアウトボタンを縦に並べる */
+    justify-content: center; 
+  }
 
+  #dog_logo {
+    width: 70px; /* ロゴのサイズを縮小 */
+  }
 
+  .name_and_logout {
+    margin-right: 0; /* 余白をリセット */
+    font-size: 12px; /* フォントサイズを調整 */
+  }
 
+  .logo {
+    font-size: 1.5em; /* ロゴのフォントサイズを小さくする */
+  }
+}
 
 /* フォームのスタイル */
 .form-for {
   width: 100%;
-  max-width: 500px;
-  margin: 0 auto;
-  padding: 20px;
+  max-width: 400px; /* スマホ用に幅を少し狭くする */
+  margin: 20px auto; /* モバイルでは少し余白を広げる */
+  padding: 25px; /* 余白を広げて見やすくする */
   background-color: #ffffff;
   border: 1px solid #2E8B57;
   border-radius: 10px;
 }
 
-
 /* ラベルと入力フィールドのスタイル */
 .field label {
   color: #2E8B57;
   font-weight: bold;
+  margin-bottom: 5px; /* ラベルの下に余白を追加 */
 }
 
 /* 入力フィールドの幅を100%にして全体に広げる */
@@ -99,7 +116,7 @@ body {
 .actions input[type="submit"] {
   background-color: #2E8B57;
   color: #ffffff;
-  padding: 10px 20px;
+  padding: 12px 25px; /* ボタンのサイズを少し広げる */
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -115,6 +132,6 @@ body {
   color: #fff; /* 白文字 */
   padding: 2px 4px; /* ラベルの内側余白 */
   border-radius: 3px; /* 角を丸く */
-  font-size: 0.6em; /* 少し小さく */
-  margin-left: 10px; /* ラベルとスペースを空ける */
+  font-size: 0.7em; /* 少し小さく */
+  margin-left: 15px; /* ラベルとスペースを空ける */
 }

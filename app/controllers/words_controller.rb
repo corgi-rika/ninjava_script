@@ -45,6 +45,8 @@ class WordsController < ApplicationController
   def search
     # モデルのsearchメソッドを呼び出し、検索結果を取得
     @words = @user.words.search(params[:keyword]).page(params[:page]).per(10)
+    # 元の単語一覧での位置（番号）を表示するために、ID順にリストを取得
+    @all_words_ids = @user.words.order(created_at: :desc).pluck(:id)
   end
 
   private
