@@ -3,3 +3,4 @@ import "@hotwired/turbo-rails"
 import "controllers"
 import "quiz"
 import "flash" 
+import "word_table"; 
