@@ -16,7 +16,7 @@
     <table>
       <thead>
         <tr>
-          <%# <th>番号</th> %>
+          <th>番号</th> 
           <th>単語</th>
           <th>意味</th>
           <th>意味（ひらがな）</th>
@@ -26,8 +26,7 @@
       <tbody>
         <% @words.each_with_index do |word, index| %>
           <tr>
-            <%# ページネーション追加後に追加 %>
-            <%# <td><%= link_to (index + 1 + ((params[:page] || 1).to_i - 1) * @words.limit_value), user_word_path(@user, word) %>
+            <td><%= link_to (@all_words_ids.index(word.id) + 1), user_word_path(@user, word) %></td>
             <td><%= word.word %></td>
             <td><%= word.meaning %></td>
             <td><%= word.hiragana %></td>

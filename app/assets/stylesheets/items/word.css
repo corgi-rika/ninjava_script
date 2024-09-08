@@ -23,3 +23,20 @@
   color: white;
   background-color: #14997a;
 }
+
+.show-detail table {
+  width: 100%; /* テーブル全体の幅を80%に設定 */
+  margin: 0 auto; /* テーブルを中央に配置 */
+  border-collapse: collapse; /* テーブルのセル間のスペースをなくす */
+}
+
+.show-detail th, .show-detail td {
+  padding: 12px 40px; /* セル内の余白を設定 */
+  border: 1px solid #dddddd; /* セルの枠線を設定 */
+  text-align: left; /* テキストを左寄せに設定 */
+}
+
+.show-detail th {
+  background-color: #f2f2f2; /* ヘッダーセルの背景色 */
+  font-weight: bold; /* ヘッダーセルの文字を太字に */
+}
