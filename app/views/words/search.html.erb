@@ -25,8 +25,8 @@
       </thead>
       <tbody>
         <% @words.each_with_index do |word, index| %>
-          <tr>
-            <td><%= link_to (@all_words_ids.index(word.id) + 1), user_word_path(@user, word) %></td>
+          <tr data-url="<%= user_word_path(@user, word) %>">
+            <td><%= (@all_words_ids.index(word.id) + 1) %></td>
             <td><%= word.word %></td>
             <td><%= word.meaning %></td>
             <td><%= word.hiragana %></td>
