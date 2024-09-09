@@ -1,7 +1,6 @@
 /* 全体の背景色とフォント */
 body {
   font-family: 'M PLUS Rounded 1c', sans-serif; /* フォントを指定 */
-  background-color: #f8f9fa; /* ページ全体の背景色 */
   font-size: 1.2em;
   color: #2c3e50;
   min-height: 100vh;
@@ -39,9 +38,24 @@ body {
   align-items: center;
 }
 
+
 #dog_logo{
+  /* animation: jump 1s ease-in-out infinite; アニメーションを適用 */
   width: 70px;
 }
+
+/* ロゴにジャンプするアニメーション */
+/* @keyframes jump {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px); 
+  }
+  100% {
+    transform: translateY(0);
+  }
+} */
 
 .logo {
   font-family: 'Pixelify Sans', sans-serif;

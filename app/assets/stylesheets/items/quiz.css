@@ -2,6 +2,7 @@
   text-align: center; /* コンテンツを中央に配置 */
   margin: 0 auto; /* 自動的に余白を均等に配置 */
   max-width: 600px; /* 最大幅を設定して、行が長すぎないようにする */
+  background-color: #f9f9f9;
 }
 
 .quiz-title {
@@ -69,12 +70,12 @@
 }
 
 .quiz-result-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* 軽い影をつけて立体感を追加 */
+  max-width: 600px;
   text-align: center;
-  margin-top: 50px;
 }
 
 /* ４択クイズのボタンのスタイルをリンクと統一するためのスタイル */
