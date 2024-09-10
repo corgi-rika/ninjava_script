@@ -16,13 +16,16 @@ document.addEventListener('turbo:load', function() {
         const correctAnswer = button.dataset.correct;
         const url = button.dataset.url;
 
+        // モーダルのクラスをリセット
+        quizModal.classList.remove('correct', 'incorrect');
+
         if (userAnswer === correctAnswer) {
           quizModalMessage.textContent = 'すばらしい！正解です！';
-          quizModalMessage.className = 'correct'; // 正解時のクラスを追加
+          quizModal.classList.add('correct');  // quizModalに正解のクラスを追加
           correctSound.play(); // 正解時の音声を再生
         } else {
           quizModalMessage.textContent = 'ざんねん！不正解です。';
-          quizModalMessage.className = 'incorrect'; // 不正解時のクラスを追加
+          quizModal.classList.add('incorrect');  // quizModalに不正解のクラスを追加
           incorrectSound.play(); // 不正解時の音声を再生
         }
 

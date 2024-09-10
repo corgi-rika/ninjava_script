@@ -1,24 +1,31 @@
 .quiz-modal {
-  display: none; /* デフォルトでは非表示 */
+  display: none; /* デフォルトで非表示 */
   position: fixed;
-  z-index: 1000; /* 高い値を設定して最前面に表示 */
-  left: 50%;
   top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
-  width: 80%;
-  max-width: 400px;
-  padding: 20px;
   background-color: white;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  text-align: center;
   border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 300px;
+  z-index: 1000;
 }
 
+/* モーダルのコンテンツのスタイル */
 .quiz-modal-content {
-  margin: 0;
+  font-size: 18px;
 }
 
-.quiz-modal-content span {
-  font-size: 1.2em;
-  color: #333;
+/* 正解時のスタイル */
+.correct {
+  border: 3px solid #4CAF50;
+  color: #4CAF50;
+}
+
+/* 不正解時のスタイル */
+.incorrect {
+  border: 3px solid #4295e2;
+  color: #4295e2;
 }
