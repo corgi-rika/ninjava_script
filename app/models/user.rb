@@ -18,6 +18,9 @@ class User < ApplicationRecord
   # roleのバリデーション
   validates :role, presence: true
   validates :nickname, presence: true
+  validates :email, presence: true
+
+
 
   # メンター登録時に一意なコードを生成するためのコールバック
   before_create :generate_unique_code, if: :mentor?
