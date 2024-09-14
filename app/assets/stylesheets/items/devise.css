@@ -149,3 +149,9 @@ body {
   font-size: 0.7em; /* 少し小さく */
   margin-left: 15px; /* ラベルとスペースを空ける */
 }
+
+
+footer a {
+  color: #999; /* デフォルトのリンクの色 */
+  text-decoration: none; /* 下線をなくす */
+}
