@@ -155,3 +155,7 @@ footer a {
   color: #999; /* デフォルトのリンクの色 */
   text-decoration: none; /* 下線をなくす */
 }
+
+input:focus{
+  border-color: #006400;
+}
