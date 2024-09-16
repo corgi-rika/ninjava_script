@@ -1,68 +1,67 @@
-<h2>Sign up</h2>
-
+<h2>Sign up（新規登録）</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
-    <%= f.label :nickname %>
+    <%= f.label :nickname, 'Nickname（ニックネーム）' %>
     <span class="required-label">必須</span><br />
     <%= f.text_field :nickname, placeholder: "ニンジャワンコ", autofocus: true %>
   </div>
 
   <div class="field">
-    <%= f.label :first_name %>
+    <%= f.label :first_name, 'First Name（名）' %>
     <span class="required-label">必須</span><br />
     <%= f.text_field :first_name, placeholder: "Taro" %>
   </div>
 
   <div class="field">
-    <%= f.label :last_name %>
+    <%= f.label :last_name, 'Last Name（姓）' %>
     <span class="required-label">必須</span><br />
     <%= f.text_field :last_name, placeholder: "Yamada" %>
   </div>
 
   <div class="field">
-    <%= f.label :first_name_kana %>
+    <%= f.label :first_name_kana, 'First Name Kana（名のカナ）' %>
     <span class="required-label">必須</span><br />
     <%= f.text_field :first_name_kana, placeholder: "タロウ" %>
   </div>
 
   <div class="field">
-    <%= f.label :last_name_kana %>
+    <%= f.label :last_name_kana, 'Last Name Kana（姓のカナ）' %>
     <span class="required-label">必須</span><br />
     <%= f.text_field :last_name_kana, placeholder: "ヤマダ" %>
   </div>
 
   <div class="field">
-    <%= f.label :email %>
+    <%= f.label :email, 'Email（メールアドレス）' %>
     <span class="required-label">必須</span><br />
     <%= f.email_field :email, placeholder: "ninjava@example.com", autocomplete: "email" %>
   </div>
 
   <div class="field">
-    <%= f.label :role, "役割 (Role)" %><br />
+    <%= f.label :role, 'Role（役割）' %><br />
     <span class="required-label">必須</span><br />
-    <%= f.collection_select :role, Role.all, :id, :name, prompt: "選択してください (Please select)" %>
+    <%= f.collection_select :role, Role.all, :id, :name, prompt: "選択してください（Please select）" %>
   </div>
 
   <div class="field">
-    <%= f.label :password %>
+    <%= f.label :password, 'Password（パスワード）' %>
     <span class="required-label">必須</span><br />
     <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
     <%= f.password_field :password, autocomplete: "new-password" %>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %>
+    <%= f.label :password_confirmation, 'Password Confirmation（パスワード確認用）' %>
     <span class="required-label">必須</span><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "Sign up（登録する）" %>
   </div>
 <% end %>
 
