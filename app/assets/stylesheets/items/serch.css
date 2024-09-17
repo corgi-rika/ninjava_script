@@ -4,10 +4,6 @@
   align-items: center;
 }
 
-.search-input:focus {
-  border-color:#055140 /* フォーカス時の枠線の色 */
-
-}
 
 .search-input {
   width: 300px;

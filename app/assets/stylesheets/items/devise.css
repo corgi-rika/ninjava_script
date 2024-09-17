@@ -156,6 +156,9 @@ footer a {
   text-decoration: none; /* 下線をなくす */
 }
 
-input:focus{
-  border-color: #006400;
+
+input:focus, textarea:focus, select:focus {
+  border: none; /* ボーダーを削除 */
+  outline: none; /* デフォルトのアウトラインを削除 */
+  box-shadow: 0 0 5px #000900; /* 深緑色のボックスシャドウ */
 }
