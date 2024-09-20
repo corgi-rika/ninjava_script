@@ -2,6 +2,7 @@
 <div class="top-spacing text-center">
   <h1><%= user.nickname %>さん、ようこそNinjavaScriptへ！</h1>
   <p>今日も日本語学習を頑張りましょう！</p>
+  <p>今週の学習時間の合計は<%=@weekly_study_time%>時間です</p>
   <% if user.mentor.present? %>
     <p><%= user.nickname %>さんのメンターは<%= user.mentor.nickname %>さんです</p>
   <% else %>
