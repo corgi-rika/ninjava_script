@@ -16,6 +16,8 @@ class ReportsController < ApplicationController
       @reports = @reports.where(created_at: params[:start_date]..params[:end_date])
     end
 
+
+
     # 作成日の降順で並べ替え、ページネーションを適用
     @reports = @reports.order(created_at: :desc).page(params[:page]).per(10)
   end
