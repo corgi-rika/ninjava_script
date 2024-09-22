@@ -13,7 +13,7 @@
     <div class="actions">
       <%= button_to '次のクイズ', user_word_quizzes_path(@user, @word), method: :get, class: "quiz-link" %> |
       <%= link_to 'ホームへ戻る', root_path %> |
-      <%= link_to '途中でやめる', reset_session_path(@user), data: { turbo_method: :delete }, class: "quiz-link" %>
+      <%= button_to 'クイズを終了する', finish_user_word_quiz_path(@user, @word, @quiz), method: :post, class: "quiz-link" %>
     </div>
   </div>
 </div>
