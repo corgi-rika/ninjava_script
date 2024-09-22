@@ -1,6 +1,7 @@
 class QuizzesController < ApplicationController
   before_action :set_user
-  before_action :set_word, only: [:show, :index]
+  before_action :set_word, only: [:show, :index, :finish]
+  before_action :set_quiz, only: [:show, :finish] # finishアクションに対しても@quizを設定
 
   def reset_session
     session[:quiz_count] = 0
@@ -90,6 +91,22 @@ class QuizzesController < ApplicationController
     session[:already_counted] = nil # 次回のクイズ用にリセット
   end
 
+  # クイズの終了処理
+  def finish
+    # 特定の単語に関連するクイズをすべて削除
+    if Quiz.delete_all
+      Rails.logger.info "すべてのクイズが削除されました."
+    else
+      Rails.logger.error "クイズの削除に失敗しました."
+    end
+    # セッションのカウントをリセット
+    session[:quiz_count] = 0
+    session[:correct_count] = 0
+    session[:already_counted] = nil # フラグもリセット
+
+    redirect_to root_path, notice: 'クイズが終了しました。'
+  end
+
   private
 
   def set_user
@@ -99,4 +116,9 @@ class QuizzesController < ApplicationController
   def set_word
     @word = Word.find(params[:word_id])
   end
+
+  def set_quiz
+    @quiz = Quiz.find(params[:id])
+  end
+
 end
