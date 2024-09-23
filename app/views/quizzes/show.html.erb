@@ -11,8 +11,12 @@
     <p>例文: <%= @quiz.word.example %></p>
 
     <div class="actions">
-      <%= button_to '次のクイズ', user_word_quizzes_path(@user, @word), method: :get, class: "quiz-link" %> |
-      <%= link_to 'ホームへ戻る', root_path %> |
+      <%  if session[:quiz_count] < 10 %>
+        <%= button_to '次のクイズ', user_word_quizzes_path(@user, @word), method: :get, class: "quiz-link" %> 
+      <% else %>
+        <%= link_to '結果を見る', user_results_path(@user, word_id: @word.id), class:"btn-warning"%>
+      <% end %>
+      |  <%= link_to 'ホームへ戻る', root_path %> |
       <%= button_to 'クイズを終了する', finish_user_word_quiz_path(@user, @word, @quiz), method: :post, class: "quiz-link" %>
     </div>
   </div>

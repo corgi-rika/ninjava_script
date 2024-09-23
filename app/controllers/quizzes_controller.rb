@@ -11,6 +11,8 @@ class QuizzesController < ApplicationController
   end
 
   def index
+    Quiz.delete_all
+
     session[:quiz_count] ||= 0
     session[:correct_count] ||= 0
     session[:already_counted] = nil  # クイズが始まる前にフラグをリセット
