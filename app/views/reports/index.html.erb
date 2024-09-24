@@ -6,6 +6,11 @@
       <div class="report-card">
         <div class="report-header">
           <h3>学習日報: <%= report.created_at.strftime('%Y-%m-%d') %></h3>
+
+          <%# 24時間以内に投稿された日報に 'New!' を表示%>
+          <% if report.created_at > 24.hours.ago %>
+            <span class="new-label">New!</span>
+          <% end %>
           <p>合計学習時間: <strong><%= report.total_study_time %>時間</strong></p>
         </div>
         <div class="report-actions">
