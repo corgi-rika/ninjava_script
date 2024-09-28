@@ -11,8 +11,8 @@
 ## テスト用アカウント
 | ユーザータイプ | メール                | パスワード     |
 | -------------- | --------------------- | -------------- |
-| 学習者用       | learner@test.com      | learner1234    |
-| メンター用     | mentor@test.com       | mentor1234     |
+| 学習者用       | ninjawanko@example.com      | test1234    |
+| メンター用     | ninjasennin@example.com       | test1234     |
 
 ## 利用方法
 
