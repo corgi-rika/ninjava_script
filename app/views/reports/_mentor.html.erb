@@ -1,0 +1,14 @@
+<% reports.each do |report| %>
+  <div class="report-card">
+    <div class="report-header">
+      <h3>学習日報: <%= report.created_at.strftime('%Y-%m-%d') %></h3>
+      <% if report.created_at > 24.hours.ago %>
+        <span class="new-label">New!</span>
+      <% end %>
+      <p>合計学習時間: <strong><%= report.total_study_time %>時間</strong></p>
+    </div>
+    <div class="report-actions">
+      <%= link_to '詳細を見る', user_report_path(current_user, report), class: 'btn btn-info' %>
+    </div>
+  </div>
+<% end %>

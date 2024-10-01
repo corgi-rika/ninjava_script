@@ -1,0 +1,15 @@
+<% reports.each do |report| %>
+  <div class="report-card">
+    <div class="report-header">
+      <h3>学習: <%= report.created_at.strftime('%Y-%m-%d') %></h3>
+      <% if report.feedback.present? && report.updated_at > report.created_at && report.updated_at > 24.hours.ago %>
+        <span class="new-label">New!</span>
+      <% end %>
+      <p>合計学習時間: <strong><%= report.total_study_time %>時間</strong></p>
+    </div>
+    <div class="report-actions">
+      <%= link_to '詳細を見る', user_report_path(current_user, report), class: 'btn btn-info' %>
+      <%= link_to '削除', user_report_path(current_user, report), data: { turbo_method: :delete }, class: 'btn btn-danger' %>
+    </div>
+  </div>
+<% end %>
