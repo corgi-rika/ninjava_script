@@ -1,4 +1,10 @@
 <%# /Users/admin/projects/ninjava_script/app/views/main/_mentor.html.erb %>
+<% if @recent_report_created %>
+  <div class="notification">
+    <span class="new-label">New!</span> 日報が更新されました！
+  </div>
+<% end %>
+
 <div class="top-spacing text-center">
   <h1><%= user.nickname %>さん、ようこそNinjavaScriptへ！</h1>
   <p>今日もサポートよろしくお願いします!</p>
