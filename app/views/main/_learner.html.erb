@@ -1,4 +1,10 @@
 <%# /Users/admin/projects/ninjava_script/app/views/main/_learner.html.erb %>
+<% if @recent_reply_created %>
+  <span class="new-label">New!</span> フィードバックが届いています！
+<% else %>
+  <p>フィードバックはまだありません。</p>
+<% end %>
+
 <div class="top-spacing text-center">
   <h1><%= user.nickname %>さん、ようこそNinjavaScriptへ！</h1>
   <p>今日も日本語学習を頑張りましょう！</p>
