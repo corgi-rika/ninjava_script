@@ -29,3 +29,11 @@
   border: 3px solid #4295e2;
   color: #4295e2;
 }
+
+.quiz-modal-icon.correct {
+  color: #4CAF50;
+}
+
+.quiz-modal-icon.incorrect {
+  color: #4295e2;
+}
