@@ -16,6 +16,10 @@
 /* モーダルのコンテンツのスタイル */
 .quiz-modal-content {
   font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 
 /* 正解時のスタイル */
@@ -31,9 +35,11 @@
 }
 
 .quiz-modal-icon.correct {
-  color: #4CAF50;
+  border: none; /* 枠線をなくす */
+  stroke: #4CAF50;  /* 正解時の緑色 */
 }
 
 .quiz-modal-icon.incorrect {
-  color: #4295e2;
+  border: none; /* 枠線をなくす */
+  stroke: #4295e2;  /* 不正解時の青色 */
 }
