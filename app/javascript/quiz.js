@@ -2,7 +2,8 @@ document.addEventListener('turbo:load', function() {
   const quizButtons = document.querySelectorAll('.quiz-button');
   const quizModal = document.getElementById('quiz-modal');
   const quizModalMessage = document.getElementById('quiz-modal-message');
-  const quizModalIcon = document.getElementById('quiz-modal-icon'); // SVGアイコンの要素を取得
+  const correctIcon = document.getElementById('quiz-modal-icon-correct'); // 正解のアイコン要素を取得
+  const incorrectIcon = document.getElementById('quiz-modal-icon-incorrect'); // 不正解のアイコン
   const correctSound = document.getElementById('correct-sound');
   const incorrectSound = document.getElementById('incorrect-sound');
 
@@ -19,23 +20,22 @@ document.addEventListener('turbo:load', function() {
 
         // モーダルのクラスをリセット
         quizModal.classList.remove('correct', 'incorrect');
-        quizModalIcon.classList.remove('correct', 'incorrect');  // アイコンのクラスもリセット
-        quizModalIcon.style.display = 'none'; // アイコンを非表示にリセット
+
+        // アイコンをリセット
+        correctIcon.style.display = 'none'; // 正解アイコンを非表示
+        incorrectIcon.style.display = 'none'; // 不正解アイコンを非表示
 
         if (userAnswer === correctAnswer) {
           quizModalMessage.textContent = 'すばらしい！正解です！';
-          quizModal.classList.add('correct');  // quizModalに正解のクラスを追加
-          quizModalIcon.classList.add('correct');  // アイコンの正解用クラスを追加
+          quizModal.classList.add('correct');  // 正解のクラスを追加
+          correctIcon.style.display = 'block';  // 正解アイコンを表示
           correctSound.play(); // 正解時の音声を再生
         } else {
           quizModalMessage.textContent = 'ざんねん！不正解です。';
-          quizModal.classList.add('incorrect');  // quizModalに不正解のクラスを追加
-          quizModalIcon.classList.add('incorrect');  // アイコンの不正解用クラスを追加
+          quizModal.classList.add('incorrect');  // 不正解のクラスを追加
+          incorrectIcon.style.display = 'block';  // 不正解アイコンを表示
           incorrectSound.play(); // 不正解時の音声を再生
         }
-
-        // アイコンを表示
-        quizModalIcon.style.display = 'block';
 
         // モーダルを表示
         quizModal.style.display = 'block';

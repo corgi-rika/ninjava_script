@@ -34,9 +34,11 @@
   color: #4295e2;
 }
 
+
 .quiz-modal-icon.correct {
   border: none; /* 枠線をなくす */
   stroke: #4CAF50;  /* 正解時の緑色 */
+  
 }
 
 .quiz-modal-icon.incorrect {
