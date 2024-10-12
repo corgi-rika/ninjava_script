@@ -4,6 +4,16 @@
     <h1>クイズの結果</h1>
     <p>正解数: <%= @correct_count %> 問</p>
 
+    <%if @correct_count == 10 %>
+      <p class="result-message">素晴らしい！この調子で頑張りましょう！</p>
+    <% elsif @correct_count >=8 %>
+      <p class="result-message">お見事！頑張りましたね！</p>
+    <% elsif @correct_count >= 6 %>
+      <p class="result-message">さすがです！頑張りました！</p>
+    <% else %>
+      <p class="result-message">引き続き頑張りましょう！</p>
+    <% end %>
+
     <div class="actions">
       <%= link_to 'ホームに戻る', root_path %> |
         <% if @word.present? %>
