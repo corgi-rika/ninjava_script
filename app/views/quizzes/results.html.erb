@@ -4,6 +4,7 @@
     <h1>クイズの結果</h1>
     <p>正解数: <%= @correct_count %> 問</p>
 
+
     <%if @correct_count == 10 %>
       <p class="result-message">素晴らしい！この調子で頑張りましょう！</p>
     <% elsif @correct_count >=8 %>

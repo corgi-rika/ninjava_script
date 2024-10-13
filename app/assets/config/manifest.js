@@ -4,3 +4,4 @@
 //= link_tree ../../../vendor/javascript .js
 //= link correct.wav
 //= link incorrect.wav
+//= link low-score-sound.wav
