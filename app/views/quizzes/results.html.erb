@@ -4,8 +4,6 @@
     <h1>クイズの結果</h1>
     <p>正解数: <%= @correct_count %> 問</p>
 
-    <!-- 音声ファイルを埋め込む -->
-    <audio id="low-score-sound" src="/assets/audios/low-score-sound.wav" preload="auto"></audio>
 
     <%if @correct_count == 10 %>
       <p class="result-message">素晴らしい！この調子で頑張りましょう！</p>
