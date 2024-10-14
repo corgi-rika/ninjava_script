@@ -5,3 +5,4 @@
 //= link correct.wav
 //= link incorrect.wav
 //= link low-score-sound.wav
+//= link mid-score-sound.wav
