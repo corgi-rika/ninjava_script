@@ -6,7 +6,9 @@ document.addEventListener('turbo:load', function() {
   const incorrectIcon = document.getElementById('quiz-modal-icon-incorrect'); // 不正解のアイコン
   const correctSound = document.getElementById('correct-sound');
   const incorrectSound = document.getElementById('incorrect-sound');
-  const lowScoreSound = document.getElementById('low-score-sound');// 結果画面での音声を再生するための音声タグ要素を取得
+  const lowScoreSound = document.getElementById('low-score-sound'); // 低得点用の音声
+  const midScoreSound = document.getElementById('mid-score-sound'); // 中得点用の音声
+
 
    // 追加: lowScoreSoundが正しく取得されているか確認
    console.log('lowScoreSound:', lowScoreSound);
@@ -61,6 +63,8 @@ document.addEventListener('turbo:load', function() {
     
     if (correctCount <= 5) {
       lowScoreSound.play();  // 5問以下の時に音声を再生
+    } else if (correctCount >= 6 && correctCount <= 8) {
+      midScoreSound.play();  // 6問以上8問以下の時に中得点音声を再生
     }
   }
 });
